@@ -1,0 +1,1851 @@
+1/
+ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b4:96:91:26:21:d5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.229/24 brd 192.168.1.255 scope global dynamic noprefixroute enp1s0
+       valid_lft 37372sec preferred_lft 37372sec
+    inet6 fd71:90fc:ec5b::d6a/128 scope global dadfailed tentative noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fd71:90fc:ec5b:0:b696:91ff:fe26:21d5/64 scope global noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b696:91ff:fe26:21d5/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 54:bf:64:62:ce:95 brd ff:ff:ff:ff:ff:ff
+    inet 147.230.78.88/21 brd 147.230.79.255 scope global dynamic noprefixroute enp0s31f6
+       valid_lft 19003sec preferred_lft 19003sec
+    inet6 2001:718:1c01:72:56bf:64ff:fe62:ce95/64 scope global dynamic noprefixroute 
+       valid_lft 604739sec preferred_lft 86339sec
+    inet6 fe80::56bf:64ff:fe62:ce95/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether ea:ce:eb:6b:fb:ce brd ff:ff:ff:ff:ff:ff permaddr 7c:2a:31:24:25:e8
+    
+ifconfig
+enp0s31f6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 147.230.78.88  netmask 255.255.248.0  broadcast 147.230.79.255
+        inet6 fe80::56bf:64ff:fe62:ce95  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:718:1c01:72:56bf:64ff:fe62:ce95  prefixlen 64  scopeid 0x0<global>
+        ether 54:bf:64:62:ce:95  txqueuelen 1000  (Ethernet)
+        RX packets 12744102  bytes 3939409732 (3.6 GiB)
+        RX errors 0  dropped 603174  overruns 0  frame 0
+        TX packets 1126729  bytes 717340344 (684.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xee300000-ee320000  
+
+enp1s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.229  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fd71:90fc:ec5b::d6a  prefixlen 128  scopeid 0x0<global>
+        inet6 fe80::b696:91ff:fe26:21d5  prefixlen 64  scopeid 0x20<link>
+        inet6 fd71:90fc:ec5b:0:b696:91ff:fe26:21d5  prefixlen 64  scopeid 0x0<global>
+        ether b4:96:91:26:21:d5  txqueuelen 1000  (Ethernet)
+        RX packets 533552  bytes 481217822 (458.9 MiB)
+        RX errors 0  dropped 3  overruns 0  frame 0
+        TX packets 120614  bytes 19231671 (18.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xee100000-ee1fffff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 26143  bytes 6168213 (5.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26143  bytes 6168213 (5.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether ea:ce:eb:6b:fb:ce  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        
+2/
+ip n
+147.230.76.32 dev enp0s31f6 lladdr a0:36:bc:22:fb:71 STALE 
+147.230.77.233 dev enp0s31f6 lladdr 10:98:36:a2:75:fb REACHABLE 
+147.230.74.87 dev enp0s31f6 lladdr 4c:cc:6a:94:57:72 STALE 
+192.168.1.1 dev enp1s0 lladdr cc:2d:e0:e0:ba:ea REACHABLE 
+147.230.75.239 dev enp0s31f6 lladdr 70:71:bc:78:1b:ef STALE 
+147.230.72.250 dev enp0s31f6 lladdr d0:c7:89:a9:d2:80 STALE 
+fe80::ce2d:e0ff:fee0:baea dev enp1s0 lladdr cc:2d:e0:e0:ba:ea router STALE 
+fe80::d2c7:89ff:fea9:d280 dev enp0s31f6 lladdr d0:c7:89:a9:d2:80 router REACHABLE 
+fd71:90fc:ec5b::1 dev enp1s0 lladdr cc:2d:e0:e0:ba:ea router STALE
+
+arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+el2-pc15.mti.tul.cz      ether   a0:36:bc:22:fb:71   C                     enp0s31f6
+share.nti.tul.cz         ether   10:98:36:a2:75:fb   C                     enp0s31f6
+el1-010.mti.tul.cz       ether   4c:cc:6a:94:57:72   C                     enp0s31f6
+a03r04.lan               ether   cc:2d:e0:e0:ba:ea   C                     enp1s0
+rameno.mti.tul.cz        ether   70:71:bc:78:1b:ef   C                     enp0s31f6
+router-b.tul.cz          ether   d0:c7:89:a9:d2:80   C                     enp0s31f6
+Netid State  Recv-Q Send-Q                                      Local Address:Port        Peer Address:Port  Process
+
+ss
+u_dgr ESTAB  0      0                                     /run/systemd/notify 14385                  * 0            
+u_dgr ESTAB  0      0                            /run/systemd/journal/dev-log 14398                  * 0            
+u_dgr ESTAB  0      0                             /run/systemd/journal/socket 14400                  * 0            
+u_dgr ESTAB  0      0                                /run/chrony/chronyd.sock 23175                  * 0            
+u_str ESTAB  0      0                                                       * 191684                 * 189148       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189052                 * 189051       
+u_seq ESTAB  0      0                                                       * 193596                 * 193597       
+u_str ESTAB  0      0                                                       * 203309                 * 202450       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 193624                 * 194638       
+u_str ESTAB  0      0                                     /run/user/31778/bus 194626                 * 193611       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191053                 * 191052       
+u_str ESTAB  0      0                                                       * 191899                 * 191036       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190081                 * 191030       
+u_str ESTAB  0      0                                                       * 189925                 * 189942       
+u_str ESTAB  0      0                                                       * 23276                  * 28696        
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189419                 * 191889       
+u_seq ESTAB  0      0                                                       * 206236                 * 206235       
+u_str ESTAB  0      0                                                       * 204198                 * 202581       
+u_str ESTAB  0      0                                     /run/user/31778/bus 187310                 * 188838       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 113936                 * 0            
+u_str ESTAB  0      0                                                       * 191528                 * 188952       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17173                  * 17158        
+u_str ESTAB  0      0                                                       * 29879                  * 29880        
+u_str ESTAB  0      0                                                       * 29869                  * 29868        
+u_str ESTAB  0      0                                                       * 209028                 * 209027       
+u_str ESTAB  0      0                                                       * 186360                 * 186361       
+u_str ESTAB  0      0                                                       * 187173                 * 186313       
+u_str ESTAB  0      0                                      @/tmp/.X11-unix/X1 205260                 * 203330       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 202356                 * 205119       
+u_seq ESTAB  0      0                                                       * 196598                 * 196599       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192482                 * 193620       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189859                 * 191695       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189352                 * 190986       
+u_str ESTAB  0      0                                                       * 188154                 * 0            
+u_dgr ESTAB  0      0                                                       * 29751                  * 14398        
+u_str ESTAB  0      0                                                       * 203348                 * 202491       
+u_str ESTAB  0      0                                                       * 202461                 * 204143       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 109395                 * 0            
+u_str ESTAB  0      0                                                       * 203386                 * 205310       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 202453                 * 202452       
+u_str ESTAB  0      0                                                  @a756d 191050                 * 192517       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191811                 * 189270       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189402                 * 189243       
+u_str ESTAB  0      0                                                       * 189814                 * 189130       
+u_str ESTAB  0      0                                                       * 29925                  * 29924        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27756                  * 27334        
+u_str ESTAB  0      0                                     /run/user/31778/bus 204148                 * 202484       
+u_str ESTAB  0      0                                     /run/user/31778/bus 186366                 * 186356       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 210201                 * 208974       
+u_str ESTAB  0      0                                                       * 202485                 * 204150       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 192468                 * 192467       
+u_str ESTAB  0      0                                                       * 187292                 * 188837       
+u_str ESTAB  0      0                                                       * 29876                  * 29875        
+u_str ESTAB  0      0                                                       * 207840                 * 0            
+u_str ESTAB  0      0                                     /run/user/31778/bus 202471                 * 205262       
+u_seq ESTAB  0      0                                                       * 199402                 * 199401       
+u_str ESTAB  0      0                                                       * 189041                 * 191672       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 204046                 * 205124       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191813                 * 190968       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190680                 * 189782       
+u_dgr ESTAB  0      0                                                       * 17544                  * 14385        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 17162                  * 23125        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 193612                 * 194629       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189434                 * 190130       
+u_str ESTAB  0      0                                                       * 191881                 * 190045       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190039                 * 190991       
+u_str ESTAB  0      0                                                       * 189908                 * 189909       
+u_str ESTAB  0      0                                                       * 191664                 * 189830       
+u_str ESTAB  0      0                                                       * 186351                 * 186355       
+u_str ESTAB  0      0                                                       * 137675                 * 139409       
+u_seq ESTAB  0      0                                                       * 206235                 * 206236       
+u_str ESTAB  0      0                                                       * 204204                 * 205399       
+u_str ESTAB  0      0                                                       * 198539                 * 201288       
+u_str ESTAB  0      0                                                       * 189121                 * 190807       
+u_str ESTAB  0      0                                                       * 189039                 * 190694       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 188837                 * 187292       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190471                 * 188834       
+u_str ESTAB  0      0                                                       * 29934                  * 29933        
+u_str ESTAB  0      0                                                       * 29886                  * 29885        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27713                  * 27324        
+u_str ESTAB  0      0                                                       * 209027                 * 209028       
+u_str ESTAB  0      0                                                       * 202486                 * 202487       
+u_str ESTAB  0      0                                                       * 201300                 * 201301       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189926                 * 190909       
+u_str ESTAB  0      0                                                       * 191701                 * 191702       
+u_seq ESTAB  0      0                                                       * 207846                 * 207847       
+u_str ESTAB  0      0                                                       * 192888                 * 192474       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 32194                  * 0            
+u_str ESTAB  0      0                                                       * 203368                 * 202513       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192514                 * 192513       
+u_str ESTAB  0      0                                                       * 189979                 * 190974       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 28696                  * 23276        
+u_str ESTAB  0      0                                                       * 202475                 * 202476       
+u_str ESTAB  0      0                                                  @a756d 204138                 * 203310       
+u_str ESTAB  0      0                                                       * 193614                 * 192477       
+u_str ESTAB  0      0                                                       * 192513                 * 192514       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190842                 * 189841       
+u_str ESTAB  0      0                                                       * 189270                 * 191811       
+u_str ESTAB  0      0                                                       * 29891                  * 29892        
+u_str ESTAB  0      0                 /var/lib/sss/pipes/private/sbus-monitor 23331                  * 23330        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 23095                  * 17106        
+u_str ESTAB  0      0                                   @/tmp/.ICE-unix/20633 190887                 * 189188       
+u_str ESTAB  0      0                                                       * 30045                  * 30891        
+u_str ESTAB  0      0                                                       * 190704                 * 189056       
+u_str ESTAB  0      0                                                       * 205164                 * 204067       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191212                 * 192060       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 206098                 * 207979       
+u_str ESTAB  0      0                                                       * 191909                 * 189436       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189413                 * 190972       
+u_str ESTAB  0      0                                                       * 23174                  * 17230        
+u_str ESTAB  0      0                                                       * 191457                 * 192372       
+u_str ESTAB  0      0                                                       * 193569                 * 192361       
+u_str ESTAB  0      0                                                       * 191205                 * 190339       
+u_str ESTAB  0      0                                                  @a756d 191914                 * 191913       
+u_str ESTAB  0      0                                                       * 191704                 * 191705       
+u_dgr ESTAB  0      0                                                       * 27377                  * 14398        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27762                  * 27757        
+u_dgr ESTAB  0      0                                                       * 27690                  * 14400        
+u_dgr ESTAB  0      0                                                       * 14386                  * 14387        
+u_str ESTAB  0      0                                     /run/user/31778/bus 190757                 * 190756       
+u_str ESTAB  0      0                                                       * 27549                  * 27552        
+u_str ESTAB  0      0                                                       * 204136                 * 202442       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190759                 * 191629       
+u_str ESTAB  0      0                                                       * 188610                 * 187099       
+u_str ESTAB  0      0                                                       * 29931                  * 29930        
+u_str ESTAB  0      0                 /var/lib/sss/pipes/private/sbus-monitor 27413                  * 27412        
+u_str ESTAB  0      0                                                       * 202462                 * 202463       
+u_str ESTAB  0      0                                                       * 195443                 * 195442       
+u_str ESTAB  0      0                                                       * 195441                 * 0            
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202463                 * 202462       
+u_str ESTAB  0      0                                                       * 189841                 * 190842       
+u_str ESTAB  0      0                                                       * 200217                 * 198582       
+u_str ESTAB  0      0                                                       * 192535                 * 191943       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189899                 * 191729       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 188738                 * 188283       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 30702                  * 30701        
+u_str ESTAB  0      0                                                  @a756d 190334                 * 190332       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190070                 * 191021       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189941                 * 190913       
+u_str ESTAB  0      0                                                       * 27692                  * 27693        
+u_str ESTAB  0      0                                                       * 189384                 * 189385       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190700                 * 190699       
+u_str ESTAB  0      0                                                       * 187279                 * 190469       
+u_str ESTAB  0      0                                                       * 29860                  * 0            
+u_str ESTAB  0      0                                                       * 192465                 * 192464       
+u_str ESTAB  0      0                                                       * 192462                 * 192877       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 29742                  * 23394        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190807                 * 189121       
+u_str ESTAB  0      0                                                       * 191561                 * 190688       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 187099                 * 188610       
+u_str ESTAB  0      0                                                       * 29939                  * 29940        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17332                  * 27389        
+u_str ESTAB  0      0                                                       * 202371                 * 205133       
+u_str ESTAB  0      0                                                       * 189188                 * 190887       
+u_str ESTAB  0      0                                                       * 29880                  * 29879        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 202431                 * 203300       
+u_str ESTAB  0      0                                                       * 191460                 * 192859       
+u_str ESTAB  0      0                                                       * 190322                 * 190323       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190045                 * 191881       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190976                 * 191846       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190974                 * 189979       
+u_dgr ESTAB  0      0                                                       * 188278                 * 14400        
+u_dgr ESTAB  0      0                                                       * 14387                  * 14386        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190345                 * 191207       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189373                 * 190989       
+u_str ESTAB  0      0                                                       * 23098                  * 23097        
+u_str ESTAB  0      0                                                       * 190970                 * 189972       
+u_str ESTAB  0      0                                                       * 27693                  * 27692        
+u_str ESTAB  0      0                                     /run/user/31778/bus 189798                 * 189797       
+u_dgr ESTAB  0      0                                                       * 30230                  * 14398        
+u_str ESTAB  0      0                                                  @a756d 204157                 * 202495       
+u_str ESTAB  0      0                                                       * 189390                 * 189417       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189835                 * 190838       
+u_dgr ESTAB  0      0                                                       * 187152                 * 14400        
+u_str ESTAB  0      0                                                       * 206238                 * 0            
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 202581                 * 204198       
+u_str ESTAB  0      0                                                       * 188994                 * 188995       
+u_str ESTAB  0      0                                                       * 188735                 * 186367       
+u_str ESTAB  0      0                                                       * 29968                  * 0            
+u_str ESTAB  0      0                                                       * 204078                 * 0            
+u_str ESTAB  0      0                                     /run/user/31778/bus 189677                 * 187377       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 129474                 * 0            
+u_str ESTAB  0      0                                                       * 29883                  * 29882        
+u_str ESTAB  0      0                                                       * 17158                  * 17173        
+u_str ESTAB  0      0                                                       * 203311                 * 204140       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 192229                 * 193562       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189283                 * 189282       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17264                  * 23188        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202513                 * 203368       
+u_str ESTAB  0      0                                                       * 202452                 * 202453       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189966                 * 189965       
+u_dgr ESTAB  0      0                                                       * 22565                  * 22564        
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 198582                 * 200217       
+u_str ESTAB  0      0                                                       * 193621                 * 193622       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189901                 * 190900       
+u_str ESTAB  0      0                                                       * 189051                 * 189052       
+u_str ESTAB  0      0                                                       * 188283                 * 188738       
+u_str ESTAB  0      0                                                       * 27683                  * 23123        
+u_seq ESTAB  0      0                                                       * 192897                 * 192898       
+u_str ESTAB  0      0                                                       * 192868                 * 0            
+u_str ESTAB  0      0                                     /run/user/31778/bus 189127                 * 191662       
+u_str ESTAB  0      0                                                       * 198595                 * 198596       
+u_str ESTAB  0      0                                                       * 192464                 * 192465       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 138615                 * 137657       
+u_str ESTAB  0      0                 /var/lib/sss/pipes/private/sbus-monitor 27459                  * 27458        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 192082                 * 192081       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189056                 * 190704       
+u_str ESTAB  0      0                                                       * 189195                 * 189894       
+u_str ESTAB  0      0                                                       * 29895                  * 29894        
+u_str ESTAB  0      0                                                       * 27334                  * 27756        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27553                  * 28016        
+u_str ESTAB  0      0                                                       * 29928                  * 29927        
+u_str ESTAB  0      0                                                       * 29924                  * 29925        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17206                  * 27343        
+u_str ESTAB  0      0                                                       * 206229                 * 206228       
+u_str ESTAB  0      0                                                  @a756d 204153                 * 204152       
+u_str ESTAB  0      0                                                       * 202484                 * 204148       
+u_str ESTAB  0      0          /run/user/31778/speech-dispatcher/speechd.sock 201288                 * 198539       
+u_str ESTAB  0      0                                                       * 189221                 * 189922       
+u_str ESTAB  0      0                                                       * 191551                 * 188972       
+u_str ESTAB  0      0                                                       * 188875                 * 190504       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 17324                  * 17320        
+u_str ESTAB  0      0                                                       * 27373                  * 17283        
+u_str ESTAB  0      0                                     /run/user/31778/bus 203044                 * 205125       
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 198587                 * 200327       
+u_str ESTAB  0      0                                                       * 29865                  * 29866        
+u_str ESTAB  0      0                                                       * 192473                 * 193610       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27548                  * 27545        
+u_str ESTAB  0      0                                                       * 23316                  * 23319        
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 191672                 * 189041       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27787                  * 27782        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27750                  * 27722        
+u_str ESTAB  0      0                                                       * 192815                 * 192214       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 188193                 * 188644       
+u_str ESTAB  0      0                                                       * 203317                 * 203318       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190268                 * 191137       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190168                 * 190167       
+u_str ESTAB  0      0                                                       * 191910                 * 191911       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190849                 * 189842       
+u_str ESTAB  0      0                                                       * 23282                  * 28708        
+u_str ESTAB  0      0                                                       * 23188                  * 17264        
+u_str ESTAB  0      0                                                       * 190990                 * 190035       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189970                 * 189969       
+u_str ESTAB  0      0                 /var/lib/sss/pipes/private/sbus-monitor 27995                  * 27994        
+u_str ESTAB  2      0                                                       * 204130                 * 0            
+u_str ESTAB  0      0                                                       * 191944                 * 191945       
+u_str ESTAB  0      0                                                       * 28732                  * 28733        
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 193610                 * 192473       
+u_str ESTAB  0      0                                                       * 187091                 * 0            
+u_str ESTAB  0      0                                                  @a756d 205264                 * 205263       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189417                 * 189390       
+u_seq ESTAB  0      0                                                       * 196599                 * 196598       
+u_str ESTAB  0      0                                                       * 194647                 * 194648       
+u_str ESTAB  0      0                                                  @a756d 193622                 * 193621       
+u_str ESTAB  0      0                                                       * 190904                 * 189905       
+u_str ESTAB  0      0                                                       * 189792                 * 191616       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189903                 * 190899       
+u_str ESTAB  0      0                                                       * 191677                 * 189839       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189403                 * 191890       
+u_str ESTAB  0      0                                                       * 189815                 * 189816       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 31652                  * 0            
+u_str ESTAB  0      0                                                       * 202481                 * 205278       
+u_str ESTAB  0      0                                                       * 204155                 * 203349       
+u_str ESTAB  0      0                                     /run/user/31778/bus 188972                 * 191551       
+u_str ESTAB  0      0                                     /run/user/31778/bus 186367                 * 188735       
+u_dgr ESTAB  0      0                                                       * 188656                 * 14398        
+u_str ESTAB  0      0                                                       * 29912                  * 29913        
+u_str ESTAB  0      0                                                       * 29909                  * 29910        
+u_str ESTAB  0      0          /var/lib/sss/pipes/private/sbus-dp_default.971 23318                  * 27992        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17329                  * 27388        
+u_str ESTAB  0      0                                                       * 17106                  * 23095        
+u_str ESTAB  0      0                                                  @a756d 205402                 * 205401       
+u_str ESTAB  0      0                                                       * 205135                 * 205136       
+u_str ESTAB  0      0                                                       * 192453                 * 194611       
+u_str ESTAB  0      0                                                       * 190685                 * 189016       
+u_str ESTAB  0      0                     /tmp/.vbox-samuel.vohnicky-ipc/ipcd 203363                 * 202500       
+u_str ESTAB  0      0                                                       * 29872                  * 29873        
+u_str ESTAB  0      0          /var/lib/sss/pipes/private/sbus-dp_default.971 23317                  * 23315        
+u_str ESTAB  0      0                                                       * 27849                  * 17285        
+u_str ESTAB  0      0                                                       * 27694                  * 23130        
+u_str ESTAB  0      0                                                       * 31245                  * 28659        
+u_dgr ESTAB  0      0                                                       * 202511                 * 202512       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 202476                 * 202475       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 203322                 * 203321       
+u_str ESTAB  0      0                                                       * 192889                 * 192478       
+u_str ESTAB  0      0                                                       * 190992                 * 190041       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191852                 * 189336       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17297                  * 23198        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 192463                 * 193598       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190339                 * 191205       
+u_str ESTAB  0      0                                                       * 191890                 * 189403       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190035                 * 190990       
+u_str ESTAB  0      0                                                       * 189978                 * 189414       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191707                 * 190886       
+u_str ESTAB  0      0                                                       * 23097                  * 23098        
+u_str ESTAB  0      0                                                       * 29903                  * 29904        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189137                 * 189136       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 28733                  * 28732        
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 203339                 * 205281       
+u_str ESTAB  0      0                                      @/tmp/.X11-unix/X1 205280                 * 205277       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190828                 * 191657       
+u_str ESTAB  0      0                                   @/tmp/.ICE-unix/20633 191456                 * 192369       
+u_str ESTAB  0      0                                                       * 187102                 * 0            
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189905                 * 190904       
+u_str ESTAB  0      0                                                       * 191683                 * 189844       
+u_dgr ESTAB  0      0                                                       * 139580                 * 14398        
+u_seq ESTAB  0      0                                                       * 207847                 * 207846       
+u_seq ESTAB  0      0                                                       * 192936                 * 192935       
+u_str ESTAB  0      0                                                       * 192929                 * 0            
+u_str ESTAB  0      0                                                       * 190911                 * 189401       
+u_str ESTAB  0      0                                                  @a756d 191702                 * 191701       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202392                 * 202391       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189432                 * 191908       
+u_str ESTAB  0      0                                                       * 202429                 * 203340       
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 206214                 * 207573       
+u_str ESTAB  0      0                                                       * 29866                  * 29865        
+u_str ESTAB  0      0                                                       * 202569                 * 0            
+u_str ESTAB  0      0                                                       * 202500                 * 203363       
+u_str ESTAB  0      0                                                       * 190794                 * 190795       
+u_str ESTAB  0      0                                                       * 190699                 * 190700       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 23398                  * 29753        
+u_str ESTAB  0      0                                     /run/user/31778/bus 189963                 * 189241       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 188951                 * 191523       
+u_str ESTAB  0      0                                                       * 29927                  * 29928        
+u_str ESTAB  0      0                                                       * 29915                  * 29916        
+u_str ESTAB  0      0                                                       * 17320                  * 17324        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27314                  * 27313        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190784                 * 189108       
+u_str ESTAB  0      0                                                       * 27283                  * 17165        
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 202582                 * 203411       
+u_str ESTAB  0      0                                                       * 203331                 * 203332       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191454                 * 193568       
+u_str ESTAB  0      0                                                       * 192517                 * 191050       
+u_str ESTAB  0      0                                                       * 23137                  * 27303        
+u_str ESTAB  0      0                                     /run/user/31778/bus 202450                 * 203309       
+u_str ESTAB  0      0                                     /run/user/31778/bus 205130                 * 204049       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202369                 * 203046       
+u_str ESTAB  0      0                                                       * 194648                 * 194647       
+u_str ESTAB  0      0                                                       * 191039                 * 189430       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191036                 * 191899       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189909                 * 189908       
+u_str ESTAB  0      0                                                       * 190893                 * 189890       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 30712                  * 30709        
+u_str ESTAB  0      0                                                       * 192855                 * 192856       
+u_str ESTAB  0      0                                                       * 189647                 * 190487       
+u_str ESTAB  0      0                                                       * 205262                 * 202471       
+u_str ESTAB  0      0                                                       * 191657                 * 190828       
+u_str ESTAB  0      0                                                       * 199393                 * 0            
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189599                 * 187276       
+u_dgr ESTAB  0      0                                                       * 187170                 * 187169       
+u_str ESTAB  0      0                                     /run/user/31778/bus 205394                 * 204203       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189114                 * 189113       
+u_str ESTAB  0      0                                                       * 30033                  * 28381        
+u_str ESTAB  0      0                                                       * 206272                 * 206271       
+u_str ESTAB  0      0                                                       * 189271                 * 191812       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 30891                  * 30045        
+u_str ESTAB  0      0                                                       * 29892                  * 29891        
+u_str ESTAB  0      0                                                       * 29889                  * 29888        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202459                 * 202458       
+u_str ESTAB  0      0                                                       * 192904                 * 192903       
+u_str ESTAB  0      0                                                       * 190969                 * 191814       
+u_str ESTAB  0      0                                                       * 190916                 * 189955       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 189148                 * 191684       
+u_str ESTAB  0      0                                                       * 193620                 * 192482       
+u_str ESTAB  0      0                                                       * 191729                 * 189899       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190678                 * 189777       
+u_str ESTAB  0      0                                                       * 202495                 * 204157       
+u_str ESTAB  0      0                                                       * 190860                 * 189167       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192877                 * 192462       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 28383                  * 30885        
+u_str ESTAB  0      0                                                       * 29875                  * 29876        
+u_str ESTAB  0      0                                                       * 206302                 * 206303       
+u_str ESTAB  0      0                                                       * 191523                 * 188951       
+u_str ESTAB  0      0                                                       * 187369                 * 189666       
+u_str ESTAB  0      0                                                       * 188737                 * 186368       
+u_str ESTAB  0      0                                                       * 27388                  * 17329        
+u_str ESTAB  0      0                                                       * 27343                  * 17206        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27300                  * 17191        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189923                 * 189225       
+u_str ESTAB  0      0                                                       * 189113                 * 189114       
+u_str ESTAB  0      0                                                       * 189108                 * 190784       
+u_str ESTAB  0      0                                                       * 29933                  * 29934        
+u_str ESTAB  0      0                                                       * 29921                  * 29922        
+u_str ESTAB  0      0                                                       * 17217                  * 17216        
+u_dgr ESTAB  0      0                                                       * 202552                 * 14398        
+u_str ESTAB  0      0                                     /run/user/31778/bus 202417                 * 203160       
+u_str ESTAB  0      0                                                       * 193568                 * 191454       
+u_str ESTAB  0      0                                                       * 191207                 * 190345       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 114429                 * 0            
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 23226                  * 23222        
+u_str ESTAB  0      0                                                       * 199395                 * 199394       
+u_str ESTAB  0      0                                                       * 191913                 * 191914       
+u_str ESTAB  0      0                                                       * 189959                 * 191785       
+u_str ESTAB  0      0                                                       * 189954                 * 189957       
+u_str ESTAB  0      0                                                       * 23100                  * 23101        
+u_str ESTAB  0      0                                                       * 188273                 * 186358       
+u_str ESTAB  0      0                                                       * 27841                  * 17281        
+u_str ESTAB  0      0                                     /run/user/31778/bus 188996                 * 189772       
+u_str ESTAB  0      0                                                       * 188644                 * 188193       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 23130                  * 27694        
+u_dgr ESTAB  0      0                                                       * 27290                  * 14398        
+u_str ESTAB  0      0                                                       * 207573                 * 206214       
+u_str ESTAB  0      0                                                       * 205259                 * 203328       
+u_str ESTAB  0      0                                                       * 191645                 * 190818       
+u_str ESTAB  0      0                                                       * 206278                 * 206277       
+u_str ESTAB  0      0                                                       * 189225                 * 189923       
+u_str ESTAB  0      0                                                  @a756d 189770                 * 188990       
+u_str ESTAB  0      0                                                       * 202424                 * 205229       
+u_str ESTAB  0      0                                                       * 194638                 * 193624       
+u_str ESTAB  0      0                                                       * 191875                 * 189353       
+u_dgr ESTAB  0      0                                                       * 30822                  * 14398        
+u_str ESTAB  0      0                                     /run/user/31778/bus 189955                 * 190916       
+u_str ESTAB  0      0                                                       * 191700                 * 189185       
+u_dgr ESTAB  0      0                                                       * 28038                  * 14400        
+u_str ESTAB  0      0                                                       * 192810                 * 193544       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191705                 * 191704       
+u_str ESTAB  0      0                                                       * 205125                 * 203044       
+u_seq ESTAB  0      0                                                       * 192898                 * 192897       
+u_str ESTAB  0      0                                                       * 190988                 * 189415       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189900                 * 191722       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 192474                 * 192888       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 192856                 * 192855       
+u_str ESTAB  0      0                                                       * 189338                 * 189339       
+u_str ESTAB  0      0                                                       * 189935                 * 189937       
+u_str ESTAB  0      0                                                       * 189068                 * 191579       
+u_str ESTAB  0      0                                                       * 189064                 * 191577       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 112766                 * 0            
+u_str ESTAB  0      0                                      @/tmp/.X11-unix/X1 202444                 * 203305       
+u_str ESTAB  0      0                                                       * 193611                 * 194626       
+u_str ESTAB  0      0                                                       * 191030                 * 190081       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191853                 * 189337       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 204147                 * 202483       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189933                 * 189229       
+u_str ESTAB  0      0                                                       * 27342                  * 27770        
+u_str ESTAB  0      0                                                       * 189243                 * 189402       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 28381                  * 30033        
+u_str ESTAB  0      0                                                       * 205277                 * 205280       
+u_str ESTAB  0      0                                                       * 211111                 * 211112       
+u_str ESTAB  0      0                                                       * 202532                 * 205308       
+u_str ESTAB  0      0                                                       * 195898                 * 195897       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190469                 * 187279       
+u_str ESTAB  0      0                                                       * 29936                  * 29937        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189896                 * 191723       
+u_str ESTAB  0      0                                                       * 205124                 * 204046       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189976                 * 190973       
+u_str ESTAB  0      0                                                       * 189758                 * 188961       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 114292                 * 0            
+u_str ESTAB  0      0                                                       * 203160                 * 202417       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190343                 * 190342       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190336                 * 191185       
+u_str ESTAB  0      0                                                  @a756d 191045                 * 191042       
+u_str ESTAB  0      0                                                       * 191846                 * 190976       
+u_dgr ESTAB  0      0                                                       * 22560                  * 14400        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 205159                 * 205158       
+u_str ESTAB  0      0                                                       * 191052                 * 191053       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189916                 * 189915       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17285                  * 27849        
+u_str ESTAB  0      0                                                       * 30247                  * 0            
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 198584                 * 198583       
+u_str ESTAB  0      0                                                       * 189018                 * 190686       
+u_str ESTAB  0      0                                                       * 188995                 * 188994       
+u_str ESTAB  0      0                                                       * 137657                 * 138615       
+u_str ESTAB  0      0                                                       * 29898                  * 29897        
+u_str ESTAB  0      0          /var/lib/sss/pipes/private/sbus-dp_default.971 28675                  * 28674        
+u_str ESTAB  0      0                                                       * 27324                  * 27713        
+u_str ESTAB  0      0                                     /run/user/31778/bus 189016                 * 190685       
+u_str ESTAB  0      0                                                       * 29360                  * 28669        
+u_str ESTAB  0      0                                                       * 190886                 * 191707       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 188251                 * 187204       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 191943                 * 192535       
+u_str ESTAB  0      0                                                       * 191717                 * 189887       
+u_dgr ESTAB  0      0                                                       * 27716                  * 27717        
+u_seq ESTAB  0      0                                                       * 192935                 * 192936       
+u_str ESTAB  0      0                                                       * 192890                 * 192480       
+u_seq ESTAB  0      0                                                       * 192866                 * 192865       
+u_str ESTAB  0      0                                                       * 190973                 * 189976       
+u_str ESTAB  0      0                                                       * 189060                 * 191574       
+u_str ESTAB  0      0                                                       * 190342                 * 190343       
+u_str ESTAB  0      0                                                       * 191042                 * 191045       
+u_str ESTAB  0      0                                                       * 189822                 * 191655       
+u_str ESTAB  0      0                                                       * 23198                  * 17297        
+u_str ESTAB  0      0                                                       * 202478                 * 202479       
+u_str ESTAB  0      0                                                       * 202458                 * 202459       
+u_str ESTAB  0      0                                                       * 195442                 * 195443       
+u_str ESTAB  0      0                                                       * 189915                 * 189916       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189816                 * 189815       
+u_str ESTAB  0      0                                                       * 27757                  * 27762        
+u_str ESTAB  0      0                                                       * 29913                  * 29912        
+u_str ESTAB  0      0                                                       * 29907                  * 29906        
+u_str ESTAB  0      0                                                       * 17191                  * 27300        
+u_str ESTAB  0      0                                                       * 198583                 * 198584       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191812                 * 189271       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 187098                 * 188609       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 139409                 * 137675       
+u_str ESTAB  0      0                                                       * 211112                 * 211111       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 204144                 * 205258       
+u_str ESTAB  0      0                                                       * 195897                 * 195898       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 188835                 * 187280       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189858                 * 190878       
+u_str ESTAB  0      0                                                       * 205119                 * 202356       
+u_str ESTAB  0      0                                                       * 191750                 * 189944       
+u_str ESTAB  0      0                                                       * 189782                 * 190680       
+u_str ESTAB  0      0                                                       * 190986                 * 189352       
+u_str ESTAB  0      0                                                       * 205401                 * 205402       
+u_str ESTAB  0      0                                                       * 205307                 * 204184       
+u_str ESTAB  0      0                                                       * 190332                 * 190334       
+u_str ESTAB  0      0                                                       * 191021                 * 190070       
+u_str ESTAB  0      0                                                       * 203310                 * 204138       
+u_dgr ESTAB  0      0                                                       * 23306                  * 14398        
+u_str ESTAB  0      0                                                       * 206303                 * 206302       
+u_str ESTAB  0      0                                     /run/user/31778/bus 202489                 * 204151       
+u_str ESTAB  0      0                                                       * 195180                 * 195181       
+u_str ESTAB  0      0                                                       * 188834                 * 190471       
+u_str ESTAB  0      0                                                       * 27412                  * 27413        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 27356                  * 17221        
+u_str ESTAB  0      0                                                       * 204152                 * 204153       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190688                 * 191561       
+u_str ESTAB  0      0                                                       * 186356                 * 186366       
+u_str ESTAB  0      0                                                       * 29918                  * 29919        
+u_str ESTAB  0      0                                                       * 209003                 * 0            
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 204150                 * 202485       
+u_str ESTAB  0      0                                     /run/user/31778/bus 203328                 * 205259       
+u_str ESTAB  0      0                                                       * 29873                  * 29872        
+u_str ESTAB  0      0                                                       * 203046                 * 202369       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 192361                 * 193569       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191655                 * 189822       
+u_str ESTAB  0      0                                                       * 207979                 * 206098       
+u_str ESTAB  0      0                                                       * 203411                 * 202582       
+u_str ESTAB  0      0                                      @/tmp/.X11-unix/X0 203340                 * 202429       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189942                 * 189925       
+u_str ESTAB  0      0                                                       * 192903                 * 192904       
+u_str ESTAB  0      0                                                       * 192892                 * 0            
+u_str ESTAB  0      0                                                       * 190900                 * 189901       
+u_dgr ESTAB  0      0                                                       * 27348                  * 14398        
+u_str ESTAB  0      0                                                       * 27722                  * 27750        
+u_str ESTAB  0      0                                                       * 201301                 * 201300       
+u_str ESTAB  0      0                                                       * 191723                 * 189896       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 187100                 * 188613       
+u_dgr ESTAB  0      0                                                       * 27913                  * 14398        
+u_str ESTAB  0      0                                                       * 23125                  * 17162        
+u_str ESTAB  0      0                                                       * 200327                 * 198587       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17182                  * 17175        
+u_str ESTAB  0      0                                                       * 192369                 * 191456       
+u_str ESTAB  0      0                                                  @a756d 205278                 * 202481       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 28669                  * 29360        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 23340                  * 28753        
+u_str ESTAB  0      0                 /var/lib/sss/pipes/private/sbus-monitor 27997                  * 27996        
+u_str ESTAB  0      0                                     /run/user/31778/bus 205133                 * 202371       
+u_str ESTAB  0      0                                                       * 29904                  * 29903        
+u_str ESTAB  0      0                                                       * 27994                  * 27995        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17283                  * 27373        
+u_str ESTAB  0      0                                                       * 203321                 * 203322       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192879                 * 194614       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190323                 * 190322       
+u_dgr ESTAB  0      0                                                       * 22564                  * 22565        
+u_str ESTAB  0      0                                                       * 191137                 * 190268       
+u_str ESTAB  0      0                                                       * 190989                 * 189373       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189414                 * 189978       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 28708                  * 23282        
+u_str ESTAB  0      0                                                       * 190913                 * 189941       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189936                 * 191745       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191574                 * 189060       
+u_dgr ESTAB  0      0                                                       * 27397                  * 14398        
+u_str ESTAB  0      0                                                       * 189797                 * 189798       
+u_str ESTAB  0      0                                                       * 187276                 * 189599       
+u_str ESTAB  0      0                                                       * 208974                 * 210201       
+u_str ESTAB  0      0                                                       * 23330                  * 23331        
+u_dgr ESTAB  0      0                                                       * 16667                  * 14400        
+u_str ESTAB  0      0                                                       * 204151                 * 202489       
+u_str ESTAB  0      0                                                       * 202391                 * 202392       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189762                 * 191552       
+u_str ESTAB  0      0                                                       * 29937                  * 29936        
+u_str ESTAB  0      0                                                       * 206228                 * 206229       
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 207978                 * 206097       
+u_str ESTAB  0      0                                                       * 188990                 * 189770       
+u_str ESTAB  0      0                                                       * 27313                  * 27314        
+u_str ESTAB  0      0                                                       * 203426                 * 0            
+u_str ESTAB  0      0                                     /run/user/31778/bus 205269                 * 202474       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 204143                 * 202461       
+u_str ESTAB  0      0                                                       * 193562                 * 192229       
+u_str ESTAB  0      0                                                       * 23101                  * 23100        
+u_str ESTAB  0      0                                                       * 189336                 * 191852       
+u_str ESTAB  0      0                                                       * 189981                 * 189982       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 192480                 * 192890       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189972                 * 190970       
+u_str ESTAB  0      0                                                       * 30701                  * 30702        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189913                 * 191733       
+u_str ESTAB  0      0                                                       * 192081                 * 192082       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190076                 * 189383       
+u_dgr ESTAB  0      0                                                       * 188992                 * 14400        
+u_str ESTAB  0      0                                                       * 27458                  * 27459        
+u_str ESTAB  0      0                                     /run/user/31778/bus 191945                 * 191944       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189167                 * 190860       
+u_str ESTAB  0      0                                                       * 187377                 * 189677       
+u_str ESTAB  0      0                                                       * 29910                  * 29909        
+u_str ESTAB  0      0                                                       * 28016                  * 27553        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 28765                  * 28049        
+u_str ESTAB  0      0                                                       * 193619                 * 194635       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190686                 * 189018       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 192859                 * 191460       
+u_str ESTAB  0      0                                                       * 191938                 * 191939       
+u_str ESTAB  0      0                                                  @a756d 191062                 * 191060       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191016                 * 191014       
+u_str ESTAB  0      0                                                       * 23243                  * 17342        
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189415                 * 190988       
+u_str ESTAB  0      0                                                       * 191722                 * 189900       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191616                 * 189792       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 23123                  * 27683        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27552                  * 27549        
+u_str ESTAB  0      0                                     /run/user/31778/bus 190034                 * 189372       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189147                 * 190844       
+u_str ESTAB  0      0          /var/lib/sss/pipes/private/sbus-dp_default.971 23319                  * 23316        
+u_str ESTAB  0      0                                     /run/user/31778/bus 205399                 * 204204       
+u_str ESTAB  0      0                                                       * 195181                 * 195180       
+u_str ESTAB  0      0                                                       * 191629                 * 190759       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 186355                 * 186351       
+u_str ESTAB  0      0                                                       * 188612                 * 186195       
+u_str ESTAB  0      0                                                       * 28753                  * 23340        
+u_str ESTAB  0      0                                                       * 204129                 * 204128       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189890                 * 190893       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 188964                 * 188963       
+u_str ESTAB  0      0                                                       * 29922                  * 29921        
+u_str ESTAB  0      0                                                       * 17221                  * 27356        
+u_str ESTAB  0      0                                                       * 204128                 * 204129       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189894                 * 189195       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189014                 * 189013       
+u_str ESTAB  0      0                                                       * 188609                 * 187098       
+u_str ESTAB  0      0                                                       * 29901                  * 29900        
+u_str ESTAB  0      0                                                       * 29897                  * 29898        
+u_str ESTAB  0      0                                                       * 189383                 * 190076       
+u_str ESTAB  0      0                                                       * 191662                 * 189127       
+u_seq ESTAB  0      0                                                       * 206268                 * 206267       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 189385                 * 189384       
+u_dgr ESTAB  0      0                                                       * 187110                 * 14398        
+u_str ESTAB  0      0                                                       * 190914                 * 189951       
+u_str ESTAB  0      0                                                       * 190899                 * 189903       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189887                 * 191717       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189844                 * 191683       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190487                 * 189647       
+u_str ESTAB  0      0                                                       * 202465                 * 203323       
+u_str ESTAB  0      0                                                       * 189335                 * 191851       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189944                 * 191750       
+u_str ESTAB  0      0                                     @/tmp/dbus-yvDuey0P 185251                 * 0            
+u_str ESTAB  0      0                                                       * 191185                 * 190336       
+u_str ESTAB  0      0                                                       * 204163                 * 203361       
+u_str ESTAB  0      0                                     /run/user/31778/bus 188952                 * 191528       
+u_str ESTAB  0      0                                                       * 28674                  * 28675        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 17165                  * 27283        
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 189130                 * 189814       
+u_str ESTAB  0      0                                                       * 189013                 * 189014       
+u_str ESTAB  0      0                                                       * 191552                 * 189762       
+u_str ESTAB  0      0                                                       * 192467                 * 192468       
+u_str ESTAB  0      0                                                       * 27572                  * 28760        
+u_str ESTAB  0      0                                                       * 27545                  * 27548        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 189922                 * 189221       
+u_str ESTAB  0      0                                                       * 190756                 * 190757       
+u_str ESTAB  0      0                                                       * 23394                  * 29742        
+u_dgr ESTAB  0      0                                                       * 27339                  * 14385        
+u_str ESTAB  0      0                                     /run/user/31778/bus 192214                 * 192815       
+u_str ESTAB  0      0                                                       * 189777                 * 190678       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 28659                  * 31245        
+u_str ESTAB  0      0                                                       * 203300                 * 202431       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192372                 * 191457       
+u_str ESTAB  0      0                                                       * 191889                 * 189419       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191851                 * 189335       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191579                 * 189068       
+u_str ESTAB  0      0                                                       * 166410                 * 0            
+u_dgr ESTAB  0      0                                                       * 202512                 * 202511       
+u_str ESTAB  0      0                                                       * 190167                 * 190168       
+u_str ESTAB  0      0                                                       * 190142                 * 191917       
+u_str ESTAB  0      0                                                       * 191002                 * 191883       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189957                 * 189954       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 17342                  * 23243        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17230                  * 23174        
+u_str ESTAB  0      0                                   @/tmp/.ICE-unix/20633 203349                 * 204155       
+u_str ESTAB  0      0                                                       * 189136                 * 189137       
+u_str ESTAB  0      0                                                       * 188613                 * 187100       
+u_str ESTAB  0      0                                                       * 29885                  * 29886        
+u_str ESTAB  0      0                                                       * 29882                  * 29883        
+u_str ESTAB  0      0                                                       * 27996                  * 27997        
+u_str ESTAB  0      0                                                       * 186361                 * 186360       
+u_str ESTAB  0      0                                                       * 29940                  * 29939        
+u_str ESTAB  0      0                                                       * 192380                 * 192379       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 186313                 * 187173       
+u_dgr ESTAB  0      0                                                       * 29358                  * 14398        
+u_str ESTAB  0      0                                                       * 205281                 * 203339       
+u_str ESTAB  0      0                                                       * 205258                 * 204144       
+u_str ESTAB  0      0                                                       * 187280                 * 188835       
+u_dgr ESTAB  0      0                                                       * 27821                  * 14398        
+u_seq ESTAB  0      0                                                       * 193597                 * 193596       
+u_str ESTAB  0      0                                                       * 190972                 * 189413       
+u_str ESTAB  0      0                                                       * 190909                 * 189926       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189839                 * 191677       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189830                 * 191664       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 205229                 * 202424       
+u_str ESTAB  0      0                                                       * 194614                 * 192879       
+u_str ESTAB  0      0                                                       * 189343                 * 0            
+u_str ESTAB  0      0                                                       * 206271                 * 206272       
+u_str ESTAB  0      0                                                       * 188963                 * 188964       
+u_str ESTAB  0      0                                                       * 27389                  * 17332        
+u_str ESTAB  0      0                                                       * 27378                  * 23238        
+u_str ESTAB  0      0                                                       * 204203                 * 205394       
+u_str ESTAB  0      0                                     /run/user/31778/bus 202479                 * 202478       
+u_str ESTAB  0      0                                     /run/user/31778/bus 191537                 * 191536       
+u_str ESTAB  0      0                                                       * 29930                  * 29931        
+u_str ESTAB  0      0                                                       * 27992                  * 23318        
+u_str ESTAB  0      0                                                       * 17216                  * 17217        
+u_str ESTAB  0      0                                                       * 206097                 * 207978       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 28760                  * 27572        
+u_str ESTAB  0      0                                                       * 23315                  * 23317        
+u_str ESTAB  0      0                                                  @a756d 205136                 * 205135       
+u_str ESTAB  0      0                                     /run/user/31778/bus 190795                 * 190794       
+u_str ESTAB  0      0                                                       * 29753                  * 23398        
+u_str ESTAB  0      0                                                       * 27782                  * 27787        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 191577                 * 189064       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 187308                 * 189619       
+u_str ESTAB  0      0                                                       * 135682                 * 0            
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 112672                 * 0            
+u_dgr ESTAB  0      0                                                       * 29944                  * 14398        
+u_str ESTAB  0      0                                                       * 205396                 * 205397       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 205310                 * 203386       
+u_str ESTAB  0      0                                     /run/user/31778/bus 204140                 * 203311       
+u_str ESTAB  0      0                                                       * 190130                 * 189434       
+u_str ESTAB  0      0                                                       * 191014                 * 191016       
+u_str ESTAB  0      0                                                       * 190991                 * 190039       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 194635                 * 193619       
+u_str ESTAB  0      0                                                       * 191908                 * 189432       
+u_str ESTAB  0      0                                                       * 189969                 * 189970       
+u_str ESTAB  0      0                                                       * 189965                 * 189966       
+u_str ESTAB  0      0                                                       * 23222                  * 23226        
+u_str ESTAB  0      0                                                       * 189372                 * 190034       
+u_str ESTAB  0      0                                                       * 187204                 * 188251       
+u_str ESTAB  0      0                                     /run/user/31778/bus 204067                 * 205164       
+u_str ESTAB  0      0                                                       * 199394                 * 199395       
+u_dgr ESTAB  0      0                                                       * 191857                 * 14398        
+u_str ESTAB  0      0                                                       * 206277                 * 206278       
+u_str ESTAB  0      0                                                       * 189035                 * 189036       
+u_str ESTAB  0      0                                                       * 186350                 * 186354       
+u_str ESTAB  0      0                                     @/tmp/dbus-yvDuey0P 187994                 * 0            
+u_str ESTAB  0      0                                                       * 189229                 * 189933       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190504                 * 188875       
+u_str ESTAB  0      0                                                       * 29900                  * 29901        
+u_str ESTAB  0      0                                                       * 29888                  * 29889        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 205397                 * 205396       
+u_str ESTAB  0      0                                     /run/user/31778/bus 203323                 * 202465       
+u_seq ESTAB  0      0                                                       * 199401                 * 199402       
+u_str ESTAB  0      0                                     /run/user/31778/bus 188961                 * 189758       
+u_str ESTAB  0      0                                     /run/user/31778/bus 192478                 * 192889       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189951                 * 190914       
+u_str ESTAB  0      0                               /run/user/31778/wayland-0 189401                 * 190911       
+u_str ESTAB  0      0                                                       * 191745                 * 189936       
+u_str ESTAB  0      0                                                       * 191733                 * 189913       
+u_dgr ESTAB  0      768                                                     * 27717                  * 27716        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 202487                 * 202486       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 194611                 * 192453       
+u_str ESTAB  0      0                                                       * 190838                 * 189835       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190694                 * 189039       
+u_str ESTAB  0      0                                                       * 189813                 * 189129       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189666                 * 187369       
+u_str ESTAB  0      0                                     @/tmp/dbus-sXglrP59 111051                 * 0            
+u_str ESTAB  0      0                                                       * 29919                  * 29918        
+u_str ESTAB  0      0                                                       * 29916                  * 29915        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 23238                  * 27378        
+u_str ESTAB  0      0                                                       * 17175                  * 17182        
+u_str ESTAB  0      0                     /tmp/.vbox-samuel.vohnicky-ipc/ipcd 203361                 * 204163       
+u_str ESTAB  0      0                                                       * 202483                 * 204147       
+u_str ESTAB  0      0                                                       * 203305                 * 202444       
+u_str ESTAB  0      0                                                       * 205158                 * 205159       
+u_str ESTAB  0      0                                                       * 204049                 * 205130       
+u_str ESTAB  0      0                                                  @a756d 191917                 * 190142       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191883                 * 191002       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 190041                 * 190992       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189339                 * 189338       
+u_str ESTAB  0      0                                     /run/user/31778/bus 203318                 * 203317       
+u_str ESTAB  0      0                                                       * 194629                 * 193612       
+u_str ESTAB  0      0                                                       * 193598                 * 192463       
+u_str ESTAB  0      0                                                  @a756d 191911                 * 191910       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189937                 * 189935       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27303                  * 23137        
+u_str ESTAB  0      0                                                       * 197837                 * 197838       
+u_str ESTAB  0      0                                                       * 189842                 * 190849       
+u_str ESTAB  0      0                                                       * 30709                  * 30712        
+u_dgr ESTAB  0      0                                                       * 27341                  * 14398        
+u_str ESTAB  0      0                                                       * 189619                 * 187308       
+u_str ESTAB  0      0                                                       * 15644                  * 16706        
+u_str ESTAB  0      0                                                       * 192060                 * 191212       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 190818                 * 191645       
+u_str ESTAB  0      0                                     /run/user/31778/bus 186368                 * 188737       
+u_dgr ESTAB  0      0                                                       * 187169                 * 187170       
+u_str ESTAB  0      0                                                       * 205263                 * 205264       
+u_str ESTAB  0      0                                     /run/user/31778/bus 202442                 * 204136       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 186354                 * 186350       
+u_str ESTAB  0      0                                                       * 29906                  * 29907        
+u_str ESTAB  0      0                                                       * 29894                  * 29895        
+u_str ESTAB  0      0                                                       * 28049                  * 28765        
+u_str ESTAB  0      0                                     @/tmp/dbus-XUkSA1nl 186195                 * 188612       
+u_str ESTAB  0      0                                                       * 191060                 * 191062       
+u_str ESTAB  0      0                                                       * 202474                 * 205269       
+u_str ESTAB  0      0                                                       * 189282                 * 189283       
+u_dgr ESTAB  0      0                                                       * 23099                  * 14398        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191814                 * 190969       
+u_str ESTAB  0      0                                                       * 191695                 * 189859       
+u_str ESTAB  0      0                                                       * 197838                 * 197837       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189436                 * 191909       
+u_str ESTAB  0      0                                                       * 190968                 * 191813       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189185                 * 191700       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 186358                 * 188273       
+u_str ESTAB  0      0                                                       * 190844                 * 189147       
+u_str ESTAB  0      0                                                       * 30885                  * 28383        
+u_str ESTAB  0      0                                     /run/user/31778/bus 205308                 * 202532       
+u_str ESTAB  0      0                            /run/user/31778/pulse/native 191939                 * 191938       
+u_str ESTAB  0      0                                                       * 29868                  * 29869        
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 198596                 * 198595       
+u_str ESTAB  0      0                                                       * 190878                 * 189858       
+u_str ESTAB  0      0                              /run/user/31778/pipewire-0 189129                 * 189813       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189036                 * 189035       
+u_str ESTAB  0      0                                                       * 191536                 * 191537       
+u_str ESTAB  0      0                                                       * 188838                 * 187310       
+u_seq ESTAB  0      0                                                       * 206267                 * 206268       
+u_str ESTAB  0      0                                                       * 192379                 * 192380       
+u_str ESTAB  0      0                                                       * 189241                 * 189963       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 27770                  * 27342        
+u_str ESTAB  0      0                                     /run/user/31778/bus 202491                 * 203348       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 203332                 * 203331       
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 189353                 * 191875       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189982                 * 189981       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 191785                 * 189959       
+u_str ESTAB  0      0      @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId 204184                 * 205307       
+u_str ESTAB  0      0                                                       * 203330                 * 205260       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 192477                 * 193614       
+u_str ESTAB  0      0                                     /run/user/31778/bus 189430                 * 191039       
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 193544                 * 192810       
+u_str ESTAB  0      0                                                       * 189337                 * 191853       
+u_str ESTAB  0      0                                                       * 189772                 * 188996       
+u_seq ESTAB  0      0                                                       * 192865                 * 192866       
+u_str ESTAB  0      0                                                       * 188657                 * 0            
+u_dgr ESTAB  0      0                                                       * 30037                  * 14398        
+u_str ESTAB  0      0                             /run/dbus/system_bus_socket 17281                  * 27841        
+u_str ESTAB  0      0                             /run/systemd/journal/stdout 16706                  * 15644        
+icmp6 UNCONN 0      0                                                       *:ipv6-icmp              *:*            
+icmp6 UNCONN 0      0                                                       *:ipv6-icmp              *:*            
+udp   ESTAB  0      0                                 147.230.78.88%enp0s31f6:bootpc      147.230.16.1:bootps       
+udp   ESTAB  0      0                                    192.168.1.229%enp1s0:bootpc       192.168.1.1:bootps       
+tcp   ESTAB  0      0                                           192.168.1.229:51474     147.230.18.154:ldaps        
+tcp   ESTAB  0      0                                           147.230.78.88:934       147.230.77.233:nfs          
+tcp   ESTAB  0      0                                           192.168.1.229:56674       35.155.77.83:https
+
+netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 a0316.lan:38828         ec2-44-236-185-21:https ESTABLISHED
+tcp        0      0 a0316.lan:51474         ldap-proxy.nti.tu:ldaps ESTABLISHED
+tcp        0      0 a0316.nti.tul.cz:934    share.nti.tul.cz:nfs    ESTABLISHED
+tcp        0      0 a0316.lan:40686         239.237.117.34.bc:https ESTABLISHED
+udp        0      0 a0316.nti.tul.cz:bootpc bubo.tul.cz:bootps      ESTABLISHED
+udp        0      0 a0316.lan:bootpc        a03r04.lan:bootps       ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    187168   /run/user/31778/systemd/notify
+unix  4      [ ]         DGRAM      CONNECTED     14385    /run/systemd/notify
+unix  2      [ ]         DGRAM                    29938    public/postlog
+unix  23     [ ]         DGRAM      CONNECTED     14398    /run/systemd/journal/dev-log
+unix  9      [ ]         DGRAM      CONNECTED     14400    /run/systemd/journal/socket
+unix  2      [ ]         DGRAM      CONNECTED     23175    /run/chrony/chronyd.sock
+unix  3      [ ]         STREAM     CONNECTED     191684   
+unix  3      [ ]         STREAM     CONNECTED     189052   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     206805   
+unix  3      [ ]         STREAM     CONNECTED     203309   
+unix  3      [ ]         STREAM     CONNECTED     193624   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     194626   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191053   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191899   
+unix  3      [ ]         STREAM     CONNECTED     190081   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189925   
+unix  3      [ ]         STREAM     CONNECTED     23276    
+unix  2      [ ]         DGRAM                    191300   
+unix  3      [ ]         STREAM     CONNECTED     189419   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     204198   
+unix  3      [ ]         STREAM     CONNECTED     187310   /run/user/31778/bus
+unix  2      [ ]         STREAM     CONNECTED     113936   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     191528   
+unix  3      [ ]         STREAM     CONNECTED     17173    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29879    
+unix  3      [ ]         STREAM     CONNECTED     29869    
+unix  3      [ ]         STREAM     CONNECTED     186360   
+unix  3      [ ]         STREAM     CONNECTED     187173   
+unix  3      [ ]         SEQPACKET  CONNECTED     214695   
+unix  3      [ ]         STREAM     CONNECTED     205260   @/tmp/.X11-unix/X1
+unix  3      [ ]         STREAM     CONNECTED     202356   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     192482   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189859   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189352   /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     188154   
+unix  2      [ ]         DGRAM      CONNECTED     29751    
+unix  3      [ ]         STREAM     CONNECTED     203348   
+unix  3      [ ]         STREAM     CONNECTED     202461   
+unix  2      [ ]         STREAM     CONNECTED     109395   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     203386   
+unix  3      [ ]         STREAM     CONNECTED     202453   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191050   @a756d
+unix  3      [ ]         STREAM     CONNECTED     191811   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189402   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     189814   
+unix  3      [ ]         STREAM     CONNECTED     29925    
+unix  3      [ ]         STREAM     CONNECTED     27756    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     211462   
+unix  3      [ ]         STREAM     CONNECTED     204148   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     186366   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     210201   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     202485   
+unix  3      [ ]         STREAM     CONNECTED     192468   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     187292   
+unix  3      [ ]         STREAM     CONNECTED     29876    
+unix  2      [ ]         STREAM     CONNECTED     214512   
+unix  3      [ ]         STREAM     CONNECTED     202471   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189041   
+unix  3      [ ]         STREAM     CONNECTED     204046   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     191813   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190680   /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     17544    
+unix  3      [ ]         STREAM     CONNECTED     17162    /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     212402   
+unix  3      [ ]         STREAM     CONNECTED     193612   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189434   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191881   
+unix  3      [ ]         STREAM     CONNECTED     190039   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189908   
+unix  3      [ ]         STREAM     CONNECTED     191664   
+unix  3      [ ]         STREAM     CONNECTED     186351   
+unix  3      [ ]         STREAM     CONNECTED     137675   
+unix  3      [ ]         STREAM     CONNECTED     204204   
+unix  3      [ ]         STREAM     CONNECTED     189121   
+unix  3      [ ]         STREAM     CONNECTED     189039   
+unix  3      [ ]         STREAM     CONNECTED     188837   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190471   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29934    
+unix  3      [ ]         STREAM     CONNECTED     29886    
+unix  3      [ ]         STREAM     CONNECTED     27713    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     202486   
+unix  3      [ ]         STREAM     CONNECTED     189926   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191701   
+unix  2      [ ]         DGRAM                    27840    
+unix  3      [ ]         SEQPACKET  CONNECTED     214518   
+unix  3      [ ]         SEQPACKET  CONNECTED     209895   
+unix  3      [ ]         STREAM     CONNECTED     192888   
+unix  2      [ ]         STREAM     CONNECTED     32194    @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     203368   
+unix  3      [ ]         STREAM     CONNECTED     192514   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189979   
+unix  3      [ ]         STREAM     CONNECTED     28696    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     213948   
+unix  3      [ ]         STREAM     CONNECTED     212398   
+unix  3      [ ]         STREAM     CONNECTED     202475   
+unix  3      [ ]         STREAM     CONNECTED     204138   @a756d
+unix  3      [ ]         STREAM     CONNECTED     193614   
+unix  3      [ ]         STREAM     CONNECTED     192513   
+unix  3      [ ]         STREAM     CONNECTED     190842   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    23314    
+unix  3      [ ]         STREAM     CONNECTED     211603   
+unix  3      [ ]         STREAM     CONNECTED     189270   
+unix  3      [ ]         STREAM     CONNECTED     29891    
+unix  3      [ ]         STREAM     CONNECTED     23331    /var/lib/sss/pipes/private/sbus-monitor
+unix  3      [ ]         STREAM     CONNECTED     23095    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190887   @/tmp/.ICE-unix/20633
+unix  3      [ ]         STREAM     CONNECTED     30045    
+unix  2      [ ]         STREAM     CONNECTED     214723   
+unix  3      [ ]         STREAM     CONNECTED     190704   
+unix  3      [ ]         STREAM     CONNECTED     205164   
+unix  3      [ ]         STREAM     CONNECTED     191212   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191909   
+unix  3      [ ]         STREAM     CONNECTED     189413   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     23174    
+unix  3      [ ]         STREAM     CONNECTED     191205   
+unix  3      [ ]         STREAM     CONNECTED     191914   @a756d
+unix  3      [ ]         STREAM     CONNECTED     191704   
+unix  2      [ ]         DGRAM      CONNECTED     27377    
+unix  3      [ ]         STREAM     CONNECTED     27762    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     27690    
+unix  3      [ ]         DGRAM      CONNECTED     14386    
+unix  3      [ ]         STREAM     CONNECTED     190757   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     27549    
+unix  3      [ ]         STREAM     CONNECTED     204136   
+unix  3      [ ]         STREAM     CONNECTED     190759   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188610   
+unix  3      [ ]         STREAM     CONNECTED     29931    
+unix  3      [ ]         STREAM     CONNECTED     27413    /var/lib/sss/pipes/private/sbus-monitor
+unix  3      [ ]         STREAM     CONNECTED     212403   
+unix  3      [ ]         STREAM     CONNECTED     202462   
+unix  3      [ ]         STREAM     CONNECTED     202463   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189841   
+unix  3      [ ]         SEQPACKET  CONNECTED     214730   
+unix  3      [ ]         SEQPACKET  CONNECTED     213745   
+unix  3      [ ]         STREAM     CONNECTED     192535   
+unix  3      [ ]         STREAM     CONNECTED     189899   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     188738   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30702    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190334   @a756d
+unix  3      [ ]         STREAM     CONNECTED     190070   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189941   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     27692    
+unix  3      [ ]         STREAM     CONNECTED     189384   
+unix  3      [ ]         STREAM     CONNECTED     190700   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     187279   
+unix  2      [ ]         STREAM     CONNECTED     29860    
+unix  3      [ ]         STREAM     CONNECTED     192465   
+unix  3      [ ]         STREAM     CONNECTED     192462   
+unix  3      [ ]         STREAM     CONNECTED     29742    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190807   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191561   
+unix  3      [ ]         STREAM     CONNECTED     187099   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29939    
+unix  3      [ ]         STREAM     CONNECTED     17332    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     211336   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     202371   
+unix  3      [ ]         STREAM     CONNECTED     189188   
+unix  3      [ ]         STREAM     CONNECTED     29880    
+unix  3      [ ]         STREAM     CONNECTED     202431   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190322   
+unix  3      [ ]         STREAM     CONNECTED     190045   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     190976   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     190974   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM      CONNECTED     188278   
+unix  3      [ ]         DGRAM      CONNECTED     14387    
+unix  3      [ ]         STREAM     CONNECTED     190345   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189373   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     23098    
+unix  3      [ ]         STREAM     CONNECTED     190970   
+unix  3      [ ]         STREAM     CONNECTED     27693    
+unix  3      [ ]         STREAM     CONNECTED     189798   /run/user/31778/bus
+unix  2      [ ]         DGRAM      CONNECTED     30230    
+unix  3      [ ]         STREAM     CONNECTED     204157   @a756d
+unix  3      [ ]         STREAM     CONNECTED     189390   
+unix  3      [ ]         STREAM     CONNECTED     189835   /run/user/31778/bus
+unix  2      [ ]         DGRAM      CONNECTED     187152   
+unix  3      [ ]         STREAM     CONNECTED     202581   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     188994   
+unix  3      [ ]         STREAM     CONNECTED     188735   
+unix  2      [ ]         STREAM     CONNECTED     29968    
+unix  3      [ ]         STREAM     CONNECTED     215292   
+unix  2      [ ]         STREAM     CONNECTED     204078   
+unix  3      [ ]         STREAM     CONNECTED     189677   /run/user/31778/bus
+unix  2      [ ]         STREAM     CONNECTED     129474   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     29883    
+unix  3      [ ]         STREAM     CONNECTED     17158    
+unix  3      [ ]         STREAM     CONNECTED     203311   
+unix  3      [ ]         STREAM     CONNECTED     189283   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     17264    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     216130   
+unix  3      [ ]         STREAM     CONNECTED     206848   
+unix  3      [ ]         STREAM     CONNECTED     202513   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     202452   
+unix  3      [ ]         STREAM     CONNECTED     189966   /run/user/31778/bus
+unix  3      [ ]         DGRAM      CONNECTED     22565    
+unix  3      [ ]         STREAM     CONNECTED     193621   
+unix  3      [ ]         STREAM     CONNECTED     189901   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189051   
+unix  3      [ ]         STREAM     CONNECTED     188283   
+unix  3      [ ]         STREAM     CONNECTED     27683    
+unix  3      [ ]         SEQPACKET  CONNECTED     210839   
+unix  3      [ ]         STREAM     CONNECTED     189127   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     192464   
+unix  3      [ ]         STREAM     CONNECTED     138615   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27459    /var/lib/sss/pipes/private/sbus-monitor
+unix  3      [ ]         STREAM     CONNECTED     192082   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189056   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189195   
+unix  3      [ ]         STREAM     CONNECTED     29895    
+unix  3      [ ]         STREAM     CONNECTED     27334    
+unix  3      [ ]         STREAM     CONNECTED     210826   
+unix  3      [ ]         STREAM     CONNECTED     210822   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     27553    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29928    
+unix  3      [ ]         STREAM     CONNECTED     29924    
+unix  3      [ ]         STREAM     CONNECTED     17206    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     204153   @a756d
+unix  3      [ ]         STREAM     CONNECTED     202484   
+unix  3      [ ]         STREAM     CONNECTED     189221   
+unix  3      [ ]         STREAM     CONNECTED     191551   
+unix  3      [ ]         STREAM     CONNECTED     188875   
+unix  3      [ ]         STREAM     CONNECTED     17324    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27373    
+unix  3      [ ]         STREAM     CONNECTED     203044   /run/user/31778/bus
+unix  2      [ ]         DGRAM                    192568   
+unix  3      [ ]         STREAM     CONNECTED     29865    
+unix  3      [ ]         STREAM     CONNECTED     192473   
+unix  3      [ ]         STREAM     CONNECTED     27548    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23316    
+unix  3      [ ]         STREAM     CONNECTED     210830   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     191672   /run/user/31778/pulse/native
+unix  2      [ ]         DGRAM                    27399    
+unix  3      [ ]         STREAM     CONNECTED     27787    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27750    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     192815   
+unix  3      [ ]         STREAM     CONNECTED     188193   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     203317   
+unix  3      [ ]         STREAM     CONNECTED     190268   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     190168   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     191910   
+unix  3      [ ]         STREAM     CONNECTED     190849   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     23282    
+unix  3      [ ]         STREAM     CONNECTED     23188    
+unix  3      [ ]         STREAM     CONNECTED     216256   
+unix  3      [ ]         STREAM     CONNECTED     190990   
+unix  3      [ ]         STREAM     CONNECTED     189970   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     210712   
+unix  3      [ ]         STREAM     CONNECTED     27995    /var/lib/sss/pipes/private/sbus-monitor
+unix  2      [ ]         STREAM     CONNECTED     204130   
+unix  3      [ ]         STREAM     CONNECTED     191944   
+unix  3      [ ]         STREAM     CONNECTED     28732    
+unix  3      [ ]         STREAM     CONNECTED     193610   /run/user/31778/wayland-0
+unix  2      [ ]         STREAM     CONNECTED     187091   
+unix  3      [ ]         STREAM     CONNECTED     205264   @a756d
+unix  3      [ ]         STREAM     CONNECTED     189417   /run/user/31778/wayland-0
+unix  3      [ ]         SEQPACKET  CONNECTED     209811   
+unix  3      [ ]         STREAM     CONNECTED     193622   @a756d
+unix  3      [ ]         STREAM     CONNECTED     190904   
+unix  3      [ ]         STREAM     CONNECTED     189792   
+unix  3      [ ]         STREAM     CONNECTED     189903   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191677   
+unix  3      [ ]         STREAM     CONNECTED     206801   
+unix  3      [ ]         STREAM     CONNECTED     189403   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189815   
+unix  2      [ ]         STREAM     CONNECTED     31652    @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     202481   
+unix  3      [ ]         STREAM     CONNECTED     204155   
+unix  3      [ ]         STREAM     CONNECTED     188972   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     186367   /run/user/31778/bus
+unix  2      [ ]         DGRAM      CONNECTED     188656   
+unix  3      [ ]         STREAM     CONNECTED     29912    
+unix  3      [ ]         STREAM     CONNECTED     29909    
+unix  3      [ ]         STREAM     CONNECTED     23318    /var/lib/sss/pipes/private/sbus-dp_default.971
+unix  3      [ ]         STREAM     CONNECTED     17329    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     17106    
+unix  3      [ ]         STREAM     CONNECTED     205402   @a756d
+unix  3      [ ]         STREAM     CONNECTED     205135   
+unix  3      [ ]         STREAM     CONNECTED     192453   
+unix  3      [ ]         STREAM     CONNECTED     190685   
+unix  3      [ ]         STREAM     CONNECTED     203363   /tmp/.vbox-samuel.vohnicky-ipc/ipcd
+unix  3      [ ]         STREAM     CONNECTED     29872    
+unix  3      [ ]         STREAM     CONNECTED     23317    /var/lib/sss/pipes/private/sbus-dp_default.971
+unix  3      [ ]         STREAM     CONNECTED     209794   
+unix  3      [ ]         STREAM     CONNECTED     27849    
+unix  3      [ ]         STREAM     CONNECTED     27694    
+unix  3      [ ]         STREAM     CONNECTED     31245    
+unix  3      [ ]         DGRAM      CONNECTED     202511   
+unix  3      [ ]         STREAM     CONNECTED     202476   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     203322   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     192889   
+unix  3      [ ]         STREAM     CONNECTED     190992   
+unix  3      [ ]         STREAM     CONNECTED     191852   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     17297    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     192463   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190339   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191890   
+unix  3      [ ]         STREAM     CONNECTED     190035   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189978   
+unix  3      [ ]         STREAM     CONNECTED     191707   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     23097    
+unix  3      [ ]         STREAM     CONNECTED     29903    
+unix  3      [ ]         STREAM     CONNECTED     189137   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28733    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     203339   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     205280   @/tmp/.X11-unix/X1
+unix  3      [ ]         STREAM     CONNECTED     190828   /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     187102   
+unix  3      [ ]         STREAM     CONNECTED     189905   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191683   
+unix  2      [ ]         DGRAM      CONNECTED     139580   
+unix  3      [ ]         STREAM     CONNECTED     190911   
+unix  3      [ ]         STREAM     CONNECTED     191702   @a756d
+unix  3      [ ]         STREAM     CONNECTED     202392   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189432   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     212404   
+unix  3      [ ]         STREAM     CONNECTED     212397   
+unix  3      [ ]         STREAM     CONNECTED     202429   
+unix  3      [ ]         STREAM     CONNECTED     206214   /run/user/31778/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     29866    
+unix  2      [ ]         STREAM     CONNECTED     202569   
+unix  3      [ ]         STREAM     CONNECTED     202500   
+unix  3      [ ]         STREAM     CONNECTED     190794   
+unix  3      [ ]         STREAM     CONNECTED     190699   
+unix  3      [ ]         STREAM     CONNECTED     23398    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189963   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188951   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29927    
+unix  3      [ ]         STREAM     CONNECTED     29915    
+unix  3      [ ]         STREAM     CONNECTED     17320    
+unix  3      [ ]         STREAM     CONNECTED     27314    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190784   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27283    
+unix  3      [ ]         STREAM     CONNECTED     202582   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     203331   
+unix  3      [ ]         STREAM     CONNECTED     192517   
+unix  3      [ ]         STREAM     CONNECTED     23137    
+unix  3      [ ]         STREAM     CONNECTED     202450   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     205130   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     202369   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     191039   
+unix  3      [ ]         STREAM     CONNECTED     191036   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189909   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190893   
+unix  2      [ ]         DGRAM                    138926   
+unix  3      [ ]         STREAM     CONNECTED     30712    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     211295   
+unix  3      [ ]         STREAM     CONNECTED     189647   
+unix  3      [ ]         STREAM     CONNECTED     205262   
+unix  3      [ ]         STREAM     CONNECTED     191657   
+unix  3      [ ]         STREAM     CONNECTED     189599   /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM      CONNECTED     187170   
+unix  3      [ ]         STREAM     CONNECTED     205394   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189114   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30033    
+unix  3      [ ]         STREAM     CONNECTED     211604   
+unix  3      [ ]         STREAM     CONNECTED     189271   
+unix  3      [ ]         STREAM     CONNECTED     30891    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29892    
+unix  3      [ ]         STREAM     CONNECTED     29889    
+unix  3      [ ]         STREAM     CONNECTED     211339   @a756d
+unix  3      [ ]         STREAM     CONNECTED     202459   /run/dbus/system_bus_socket
+unix  3      [ ]         SEQPACKET  CONNECTED     214519   
+unix  3      [ ]         SEQPACKET  CONNECTED     209896   
+unix  3      [ ]         STREAM     CONNECTED     190969   
+unix  3      [ ]         STREAM     CONNECTED     190916   
+unix  3      [ ]         STREAM     CONNECTED     189148   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     193620   
+unix  3      [ ]         STREAM     CONNECTED     191729   
+unix  3      [ ]         STREAM     CONNECTED     190678   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     202495   
+unix  3      [ ]         STREAM     CONNECTED     190860   
+unix  3      [ ]         STREAM     CONNECTED     192877   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     28383    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29875    
+unix  3      [ ]         STREAM     CONNECTED     191523   
+unix  3      [ ]         STREAM     CONNECTED     187369   
+unix  3      [ ]         STREAM     CONNECTED     188737   
+unix  3      [ ]         STREAM     CONNECTED     27388    
+unix  3      [ ]         STREAM     CONNECTED     27343    
+unix  3      [ ]         STREAM     CONNECTED     27300    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189923   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189113   
+unix  3      [ ]         STREAM     CONNECTED     189108   
+unix  3      [ ]         STREAM     CONNECTED     29933    
+unix  3      [ ]         STREAM     CONNECTED     29921    
+unix  3      [ ]         STREAM     CONNECTED     17217    
+unix  2      [ ]         DGRAM      CONNECTED     202552   
+unix  3      [ ]         STREAM     CONNECTED     202417   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191207   
+unix  2      [ ]         STREAM     CONNECTED     114429   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     23226    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     217254   /var/lib/sss/pipes/nss
+unix  3      [ ]         STREAM     CONNECTED     191913   
+unix  3      [ ]         STREAM     CONNECTED     189959   
+unix  3      [ ]         STREAM     CONNECTED     189954   
+unix  3      [ ]         STREAM     CONNECTED     23100    
+unix  3      [ ]         STREAM     CONNECTED     188273   
+unix  3      [ ]         STREAM     CONNECTED     27841    
+unix  3      [ ]         STREAM     CONNECTED     188996   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188644   
+unix  3      [ ]         STREAM     CONNECTED     23130    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     27290    
+unix  3      [ ]         STREAM     CONNECTED     207573   
+unix  2      [ ]         DGRAM                    191856   
+unix  3      [ ]         STREAM     CONNECTED     205259   
+unix  3      [ ]         STREAM     CONNECTED     191645   
+unix  3      [ ]         STREAM     CONNECTED     211644   
+unix  3      [ ]         STREAM     CONNECTED     189225   
+unix  3      [ ]         STREAM     CONNECTED     189770   @a756d
+unix  3      [ ]         STREAM     CONNECTED     202424   
+unix  3      [ ]         STREAM     CONNECTED     194638   
+unix  3      [ ]         STREAM     CONNECTED     191875   
+unix  2      [ ]         DGRAM      CONNECTED     30822    
+unix  3      [ ]         STREAM     CONNECTED     189955   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191700   
+unix  2      [ ]         DGRAM      CONNECTED     28038    
+unix  3      [ ]         SEQPACKET  CONNECTED     213057   
+unix  3      [ ]         SEQPACKET  CONNECTED     209812   
+unix  3      [ ]         STREAM     CONNECTED     192810   
+unix  3      [ ]         STREAM     CONNECTED     191705   /run/user/31778/bus
+unix  3      [ ]         SEQPACKET  CONNECTED     210840   
+unix  3      [ ]         STREAM     CONNECTED     205125   
+unix  3      [ ]         STREAM     CONNECTED     190988   
+unix  3      [ ]         STREAM     CONNECTED     189900   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     209799   
+unix  3      [ ]         STREAM     CONNECTED     192474   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    27984    
+unix  3      [ ]         STREAM     CONNECTED     212048   
+unix  3      [ ]         STREAM     CONNECTED     189338   
+unix  3      [ ]         STREAM     CONNECTED     189935   
+unix  3      [ ]         STREAM     CONNECTED     189068   
+unix  3      [ ]         STREAM     CONNECTED     189064   
+unix  2      [ ]         STREAM     CONNECTED     112766   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     202444   @/tmp/.X11-unix/X1
+unix  3      [ ]         STREAM     CONNECTED     193611   
+unix  3      [ ]         STREAM     CONNECTED     191030   
+unix  3      [ ]         STREAM     CONNECTED     191853   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     210751   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     204147   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     189933   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27342    
+unix  3      [ ]         STREAM     CONNECTED     189243   
+unix  3      [ ]         STREAM     CONNECTED     28381    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     205277   
+unix  3      [ ]         STREAM     CONNECTED     214383   
+unix  3      [ ]         STREAM     CONNECTED     214382   
+unix  3      [ ]         STREAM     CONNECTED     202532   
+unix  3      [ ]         STREAM     CONNECTED     190469   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29936    
+unix  3      [ ]         STREAM     CONNECTED     189896   /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    27471    
+unix  3      [ ]         STREAM     CONNECTED     205124   
+unix  3      [ ]         STREAM     CONNECTED     189976   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189758   
+unix  2      [ ]         STREAM     CONNECTED     114292   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     210714   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     203160   
+unix  3      [ ]         STREAM     CONNECTED     190343   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     190336   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191045   @a756d
+unix  3      [ ]         STREAM     CONNECTED     191846   
+unix  2      [ ]         DGRAM      CONNECTED     22560    
+unix  3      [ ]         STREAM     CONNECTED     205159   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191052   
+unix  3      [ ]         STREAM     CONNECTED     189916   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     17285    /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     30247    
+unix  3      [ ]         STREAM     CONNECTED     189018   
+unix  3      [ ]         STREAM     CONNECTED     188995   
+unix  3      [ ]         STREAM     CONNECTED     137657   
+unix  3      [ ]         STREAM     CONNECTED     29898    
+unix  3      [ ]         STREAM     CONNECTED     28675    /var/lib/sss/pipes/private/sbus-dp_default.971
+unix  3      [ ]         STREAM     CONNECTED     27324    
+unix  3      [ ]         STREAM     CONNECTED     189016   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29360    
+unix  3      [ ]         STREAM     CONNECTED     190886   
+unix  2      [ ]         DGRAM                    189838   
+unix  3      [ ]         STREAM     CONNECTED     188251   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     191943   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     191717   
+unix  3      [ ]         DGRAM      CONNECTED     27716    
+unix  3      [ ]         STREAM     CONNECTED     211466   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     192890   
+unix  3      [ ]         STREAM     CONNECTED     190973   
+unix  3      [ ]         STREAM     CONNECTED     189060   
+unix  3      [ ]         STREAM     CONNECTED     190342   
+unix  3      [ ]         STREAM     CONNECTED     191042   
+unix  3      [ ]         STREAM     CONNECTED     189822   
+unix  3      [ ]         STREAM     CONNECTED     23198    
+unix  3      [ ]         STREAM     CONNECTED     212047   
+unix  3      [ ]         STREAM     CONNECTED     202478   
+unix  3      [ ]         STREAM     CONNECTED     202458   
+unix  3      [ ]         STREAM     CONNECTED     189915   
+unix  3      [ ]         STREAM     CONNECTED     189816   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     27757    
+unix  3      [ ]         STREAM     CONNECTED     211643   
+unix  3      [ ]         STREAM     CONNECTED     206802   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29913    
+unix  3      [ ]         STREAM     CONNECTED     29907    
+unix  3      [ ]         STREAM     CONNECTED     17191    
+unix  3      [ ]         STREAM     CONNECTED     191812   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     187098   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     139409   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     214310   
+unix  3      [ ]         STREAM     CONNECTED     204144   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     188835   /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    29610    
+unix  3      [ ]         STREAM     CONNECTED     189858   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     212400   
+unix  3      [ ]         STREAM     CONNECTED     205119   
+unix  3      [ ]         STREAM     CONNECTED     191750   
+unix  3      [ ]         STREAM     CONNECTED     189782   
+unix  3      [ ]         SEQPACKET  CONNECTED     213746   
+unix  3      [ ]         STREAM     CONNECTED     190986   
+unix  3      [ ]         STREAM     CONNECTED     205401   
+unix  3      [ ]         STREAM     CONNECTED     205307   
+unix  3      [ ]         STREAM     CONNECTED     190332   
+unix  3      [ ]         STREAM     CONNECTED     191021   
+unix  2      [ ]         DGRAM                    190506   
+unix  3      [ ]         STREAM     CONNECTED     203310   
+unix  2      [ ]         DGRAM      CONNECTED     23306    
+unix  3      [ ]         STREAM     CONNECTED     211966   
+unix  3      [ ]         STREAM     CONNECTED     202489   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188834   
+unix  3      [ ]         STREAM     CONNECTED     27412    
+unix  3      [ ]         STREAM     CONNECTED     27356    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     204152   
+unix  3      [ ]         STREAM     CONNECTED     190688   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     186356   
+unix  3      [ ]         STREAM     CONNECTED     29918    
+unix  2      [ ]         DGRAM                    211282   
+unix  3      [ ]         STREAM     CONNECTED     204150   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     203328   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29873    
+unix  3      [ ]         STREAM     CONNECTED     206804   
+unix  3      [ ]         STREAM     CONNECTED     203046   
+unix  3      [ ]         STREAM     CONNECTED     191655   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     203411   
+unix  3      [ ]         STREAM     CONNECTED     203340   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     189942   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     190900   
+unix  2      [ ]         DGRAM      CONNECTED     27348    
+unix  3      [ ]         STREAM     CONNECTED     27722    
+unix  2      [ ]         STREAM     CONNECTED     213049   
+unix  3      [ ]         STREAM     CONNECTED     191723   
+unix  3      [ ]         STREAM     CONNECTED     187100   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM      CONNECTED     27913    
+unix  3      [ ]         STREAM     CONNECTED     23125    
+unix  3      [ ]         STREAM     CONNECTED     17182    /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    17255    
+unix  3      [ ]         STREAM     CONNECTED     210713   
+unix  3      [ ]         STREAM     CONNECTED     205278   @a756d
+unix  3      [ ]         STREAM     CONNECTED     28669    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     23340    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27997    /var/lib/sss/pipes/private/sbus-monitor
+unix  3      [ ]         STREAM     CONNECTED     205133   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29904    
+unix  3      [ ]         STREAM     CONNECTED     27994    
+unix  3      [ ]         STREAM     CONNECTED     17283    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     203321   
+unix  3      [ ]         STREAM     CONNECTED     192879   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     190323   /run/user/31778/bus
+unix  3      [ ]         DGRAM      CONNECTED     22564    
+unix  3      [ ]         STREAM     CONNECTED     212399   
+unix  3      [ ]         STREAM     CONNECTED     191137   
+unix  2      [ ]         DGRAM                    191035   
+unix  3      [ ]         STREAM     CONNECTED     190989   
+unix  3      [ ]         STREAM     CONNECTED     189414   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     28708    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     190913   
+unix  3      [ ]         STREAM     CONNECTED     189936   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191574   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM      CONNECTED     27397    
+unix  3      [ ]         STREAM     CONNECTED     189797   
+unix  3      [ ]         STREAM     CONNECTED     187276   
+unix  3      [ ]         STREAM     CONNECTED     208974   
+unix  3      [ ]         STREAM     CONNECTED     23330    
+unix  2      [ ]         DGRAM      CONNECTED     16667    
+unix  3      [ ]         STREAM     CONNECTED     204151   
+unix  3      [ ]         STREAM     CONNECTED     202391   
+unix  3      [ ]         STREAM     CONNECTED     189762   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29937    
+unix  3      [ ]         STREAM     CONNECTED     211967   
+unix  3      [ ]         STREAM     CONNECTED     211472   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188990   
+unix  3      [ ]         STREAM     CONNECTED     27313    
+unix  3      [ ]         STREAM     CONNECTED     213947   
+unix  3      [ ]         STREAM     CONNECTED     205269   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     204143   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     23101    
+unix  3      [ ]         STREAM     CONNECTED     189336   
+unix  3      [ ]         STREAM     CONNECTED     189981   
+unix  2      [ ]         STREAM     CONNECTED     209899   
+unix  3      [ ]         STREAM     CONNECTED     192480   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189972   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     30701    
+unix  3      [ ]         STREAM     CONNECTED     189913   /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    192612   
+unix  3      [ ]         STREAM     CONNECTED     192081   
+unix  3      [ ]         STREAM     CONNECTED     190076   /run/user/31778/bus
+unix  2      [ ]         DGRAM      CONNECTED     188992   
+unix  3      [ ]         STREAM     CONNECTED     27458    
+unix  3      [ ]         STREAM     CONNECTED     191945   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     211468   
+unix  3      [ ]         STREAM     CONNECTED     189167   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     187377   
+unix  3      [ ]         STREAM     CONNECTED     29910    
+unix  3      [ ]         STREAM     CONNECTED     28016    
+unix  3      [ ]         STREAM     CONNECTED     28765    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     193619   
+unix  2      [ ]         DGRAM                    190867   
+unix  3      [ ]         STREAM     CONNECTED     190686   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     191938   
+unix  3      [ ]         STREAM     CONNECTED     191062   @a756d
+unix  3      [ ]         STREAM     CONNECTED     191016   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     23243    
+unix  3      [ ]         STREAM     CONNECTED     189415   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     191722   
+unix  3      [ ]         STREAM     CONNECTED     191616   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23123    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27552    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190034   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189147   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23319    /var/lib/sss/pipes/private/sbus-dp_default.971
+unix  3      [ ]         STREAM     CONNECTED     205399   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191629   
+unix  3      [ ]         STREAM     CONNECTED     186355   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     188612   
+unix  3      [ ]         STREAM     CONNECTED     28753    
+unix  3      [ ]         STREAM     CONNECTED     204129   
+unix  3      [ ]         STREAM     CONNECTED     189890   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     188964   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29922    
+unix  3      [ ]         STREAM     CONNECTED     17221    
+unix  3      [ ]         STREAM     CONNECTED     209795   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     204128   
+unix  3      [ ]         STREAM     CONNECTED     189894   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189014   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188609   
+unix  3      [ ]         STREAM     CONNECTED     29901    
+unix  3      [ ]         STREAM     CONNECTED     29897    
+unix  3      [ ]         STREAM     CONNECTED     189383   
+unix  3      [ ]         STREAM     CONNECTED     191662   
+unix  3      [ ]         STREAM     CONNECTED     189385   /run/user/31778/pipewire-0
+unix  2      [ ]         DGRAM                    191663   
+unix  2      [ ]         DGRAM      CONNECTED     187110   
+unix  3      [ ]         SEQPACKET  CONNECTED     214694   
+unix  3      [ ]         STREAM     CONNECTED     190914   
+unix  3      [ ]         STREAM     CONNECTED     190899   
+unix  3      [ ]         STREAM     CONNECTED     189887   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189844   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     190487   /run/user/31778/bus
+unix  2      [ ]         STREAM     CONNECTED     213739   
+unix  3      [ ]         STREAM     CONNECTED     202465   
+unix  3      [ ]         STREAM     CONNECTED     189335   
+unix  3      [ ]         STREAM     CONNECTED     189944   /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     185251   @/tmp/dbus-yvDuey0P
+unix  3      [ ]         STREAM     CONNECTED     191185   
+unix  3      [ ]         STREAM     CONNECTED     204163   
+unix  3      [ ]         STREAM     CONNECTED     188952   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     28674    
+unix  3      [ ]         STREAM     CONNECTED     17165    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189130   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     189013   
+unix  3      [ ]         STREAM     CONNECTED     191552   
+unix  3      [ ]         STREAM     CONNECTED     192467   
+unix  3      [ ]         STREAM     CONNECTED     27572    
+unix  3      [ ]         STREAM     CONNECTED     27545    
+unix  3      [ ]         STREAM     CONNECTED     189922   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190756   
+unix  3      [ ]         STREAM     CONNECTED     23394    
+unix  3      [ ]         STREAM     CONNECTED     209804   
+unix  2      [ ]         DGRAM      CONNECTED     27339    
+unix  3      [ ]         STREAM     CONNECTED     192214   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189777   
+unix  3      [ ]         STREAM     CONNECTED     28659    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     203300   
+unix  3      [ ]         STREAM     CONNECTED     191889   
+unix  3      [ ]         STREAM     CONNECTED     191851   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191579   /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     166410   
+unix  3      [ ]         STREAM     CONNECTED     216129   
+unix  3      [ ]         DGRAM      CONNECTED     202512   
+unix  3      [ ]         STREAM     CONNECTED     190167   
+unix  3      [ ]         STREAM     CONNECTED     190142   
+unix  3      [ ]         STREAM     CONNECTED     191002   
+unix  3      [ ]         STREAM     CONNECTED     189957   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     17342    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     17230    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     215291   
+unix  3      [ ]         STREAM     CONNECTED     203349   @/tmp/.ICE-unix/20633
+unix  3      [ ]         STREAM     CONNECTED     189136   
+unix  3      [ ]         STREAM     CONNECTED     188613   
+unix  3      [ ]         STREAM     CONNECTED     29885    
+unix  3      [ ]         STREAM     CONNECTED     29882    
+unix  3      [ ]         STREAM     CONNECTED     27996    
+unix  3      [ ]         STREAM     CONNECTED     186361   
+unix  3      [ ]         STREAM     CONNECTED     29940    
+unix  3      [ ]         STREAM     CONNECTED     214309   
+unix  3      [ ]         STREAM     CONNECTED     186313   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM      CONNECTED     29358    
+unix  3      [ ]         STREAM     CONNECTED     205281   
+unix  3      [ ]         STREAM     CONNECTED     205258   
+unix  3      [ ]         STREAM     CONNECTED     187280   
+unix  2      [ ]         DGRAM      CONNECTED     27821    
+unix  3      [ ]         SEQPACKET  CONNECTED     213056   
+unix  3      [ ]         STREAM     CONNECTED     211471   @/tmp/.ICE-unix/20633
+unix  3      [ ]         STREAM     CONNECTED     190972   
+unix  3      [ ]         STREAM     CONNECTED     190909   
+unix  3      [ ]         STREAM     CONNECTED     189839   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189830   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     205229   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     194614   
+unix  2      [ ]         STREAM     CONNECTED     189343   
+unix  3      [ ]         STREAM     CONNECTED     188963   
+unix  3      [ ]         STREAM     CONNECTED     27389    
+unix  3      [ ]         STREAM     CONNECTED     27378    
+unix  3      [ ]         STREAM     CONNECTED     204203   
+unix  3      [ ]         STREAM     CONNECTED     202479   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191537   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29930    
+unix  3      [ ]         STREAM     CONNECTED     27992    
+unix  3      [ ]         STREAM     CONNECTED     17216    
+unix  3      [ ]         STREAM     CONNECTED     28760    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     23315    
+unix  3      [ ]         STREAM     CONNECTED     205136   @a756d
+unix  3      [ ]         STREAM     CONNECTED     190795   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     29753    
+unix  3      [ ]         STREAM     CONNECTED     27782    
+unix  3      [ ]         STREAM     CONNECTED     191577   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     187308   /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     135682   
+unix  2      [ ]         STREAM     CONNECTED     112672   @/tmp/dbus-sXglrP59
+unix  2      [ ]         DGRAM      CONNECTED     29944    
+unix  3      [ ]         STREAM     CONNECTED     205396   
+unix  3      [ ]         STREAM     CONNECTED     205310   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     204140   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     190130   
+unix  3      [ ]         STREAM     CONNECTED     191014   
+unix  3      [ ]         STREAM     CONNECTED     190991   
+unix  3      [ ]         STREAM     CONNECTED     194635   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     191908   
+unix  3      [ ]         STREAM     CONNECTED     189969   
+unix  3      [ ]         STREAM     CONNECTED     189965   
+unix  3      [ ]         STREAM     CONNECTED     23222    
+unix  3      [ ]         STREAM     CONNECTED     189372   
+unix  3      [ ]         STREAM     CONNECTED     187204   
+unix  3      [ ]         STREAM     CONNECTED     204067   /run/user/31778/bus
+unix  2      [ ]         DGRAM      CONNECTED     191857   
+unix  3      [ ]         STREAM     CONNECTED     189035   
+unix  3      [ ]         STREAM     CONNECTED     186350   
+unix  2      [ ]         STREAM     CONNECTED     187994   @/tmp/dbus-yvDuey0P
+unix  3      [ ]         STREAM     CONNECTED     189229   
+unix  3      [ ]         STREAM     CONNECTED     190504   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29900    
+unix  3      [ ]         STREAM     CONNECTED     29888    
+unix  2      [ ]         STREAM     CONNECTED     212046   
+unix  3      [ ]         STREAM     CONNECTED     205397   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     211337   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     203323   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     188961   /run/user/31778/bus
+unix  2      [ ]         STREAM     CONNECTED     209814   
+unix  3      [ ]         STREAM     CONNECTED     192478   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     189951   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189401   /run/user/31778/wayland-0
+unix  3      [ ]         STREAM     CONNECTED     191745   
+unix  3      [ ]         STREAM     CONNECTED     191733   
+unix  3      [ ]         DGRAM      CONNECTED     27717    
+unix  3      [ ]         STREAM     CONNECTED     202487   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     194611   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190838   
+unix  3      [ ]         STREAM     CONNECTED     190694   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189813   
+unix  3      [ ]         STREAM     CONNECTED     189666   /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     111051   @/tmp/dbus-sXglrP59
+unix  3      [ ]         STREAM     CONNECTED     29919    
+unix  3      [ ]         STREAM     CONNECTED     29916    
+unix  3      [ ]         STREAM     CONNECTED     23238    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     17175    
+unix  3      [ ]         STREAM     CONNECTED     203361   /tmp/.vbox-samuel.vohnicky-ipc/ipcd
+unix  3      [ ]         STREAM     CONNECTED     202483   
+unix  3      [ ]         STREAM     CONNECTED     203305   
+unix  3      [ ]         STREAM     CONNECTED     205158   
+unix  3      [ ]         STREAM     CONNECTED     204049   
+unix  3      [ ]         STREAM     CONNECTED     191917   @a756d
+unix  3      [ ]         STREAM     CONNECTED     191883   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190041   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189339   /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    206814   
+unix  3      [ ]         STREAM     CONNECTED     203318   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     194629   
+unix  3      [ ]         STREAM     CONNECTED     193598   
+unix  3      [ ]         STREAM     CONNECTED     191911   @a756d
+unix  3      [ ]         STREAM     CONNECTED     189937   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     27303    /run/systemd/journal/stdout
+unix  3      [ ]         SEQPACKET  CONNECTED     214729   
+unix  3      [ ]         STREAM     CONNECTED     210617   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189842   
+unix  3      [ ]         STREAM     CONNECTED     30709    
+unix  2      [ ]         DGRAM      CONNECTED     27341    
+unix  3      [ ]         STREAM     CONNECTED     189619   
+unix  3      [ ]         STREAM     CONNECTED     15644    
+unix  3      [ ]         STREAM     CONNECTED     192060   
+unix  2      [ ]         DGRAM                    189175   
+unix  3      [ ]         STREAM     CONNECTED     190818   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     186368   /run/user/31778/bus
+unix  3      [ ]         DGRAM      CONNECTED     187169   
+unix  2      [ ]         DGRAM                    17408    
+unix  3      [ ]         STREAM     CONNECTED     205263   
+unix  3      [ ]         STREAM     CONNECTED     211467   
+unix  3      [ ]         STREAM     CONNECTED     202442   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     186354   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29906    
+unix  3      [ ]         STREAM     CONNECTED     29894    
+unix  3      [ ]         STREAM     CONNECTED     28049    
+unix  3      [ ]         STREAM     CONNECTED     186195   @/tmp/dbus-XUkSA1nl
+unix  3      [ ]         STREAM     CONNECTED     191060   
+unix  3      [ ]         STREAM     CONNECTED     206847   
+unix  3      [ ]         STREAM     CONNECTED     202474   
+unix  3      [ ]         STREAM     CONNECTED     189282   
+unix  2      [ ]         DGRAM      CONNECTED     23099    
+unix  3      [ ]         STREAM     CONNECTED     191814   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     191695   
+unix  3      [ ]         STREAM     CONNECTED     189436   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     190968   
+unix  3      [ ]         STREAM     CONNECTED     189185   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     186358   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     190844   
+unix  3      [ ]         STREAM     CONNECTED     30885    
+unix  3      [ ]         STREAM     CONNECTED     205308   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191939   /run/user/31778/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     29868    
+unix  3      [ ]         STREAM     CONNECTED     190878   
+unix  3      [ ]         STREAM     CONNECTED     189129   /run/user/31778/pipewire-0
+unix  3      [ ]         STREAM     CONNECTED     189036   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191536   
+unix  3      [ ]         STREAM     CONNECTED     188838   
+unix  3      [ ]         STREAM     CONNECTED     189241   
+unix  3      [ ]         STREAM     CONNECTED     27770    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     202491   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     203332   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189353   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     189982   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     191785   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     204184   @/home/s/samuel.vohnicky/.cache/ibus/dbus-8nW0RAId
+unix  3      [ ]         STREAM     CONNECTED     203330   
+unix  3      [ ]         STREAM     CONNECTED     192477   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189430   /run/user/31778/bus
+unix  3      [ ]         STREAM     CONNECTED     193544   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     189337   
+unix  3      [ ]         STREAM     CONNECTED     189772   
+unix  2      [ ]         STREAM     CONNECTED     188657   
+unix  2      [ ]         DGRAM      CONNECTED     30037    
+unix  3      [ ]         STREAM     CONNECTED     17281    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     16706    /run/systemd/journal/stdout
+Active Bluetooth connections (w/o servers)
+Proto  Destination       Source            State         PSM DCID   SCID      IMTU    OMTU Security
+Proto  Destination       Source            State     Channel
+
+ping tul
+PING www.tul.cz(2001:718:1c01:18::ee (2001:718:1c01:18::ee)) 56 data bytes
+64 bytes from 2001:718:1c01:18::ee (2001:718:1c01:18::ee): icmp_seq=1 ttl=63 time=0.289 ms
+64 bytes from 2001:718:1c01:18::ee (2001:718:1c01:18::ee): icmp_seq=2 ttl=63 time=0.401 ms
+64 bytes from 2001:718:1c01:18::ee (2001:718:1c01:18::ee): icmp_seq=3 ttl=63 time=0.468 ms
+64 bytes from 2001:718:1c01:18::ee (2001:718:1c01:18::ee): icmp_seq=4 ttl=63 time=0.303 ms
+64 bytes from 2001:718:1c01:18::ee (2001:718:1c01:18::ee): icmp_seq=5 ttl=63 time=0.408 ms
+
+ ping seznam
+ PING www.seznam.cz(www.seznam.cz (2a02:598:a::79:222)) 56 data bytes
+64 bytes from www.seznam.cz (2a02:598:a::79:222): icmp_seq=1 ttl=57 time=4.55 ms
+64 bytes from www.seznam.cz (2a02:598:a::79:222): icmp_seq=2 ttl=57 time=4.77 ms
+64 bytes from www.seznam.cz (2a02:598:a::79:222): icmp_seq=3 ttl=57 time=4.77 ms
+64 bytes from www.seznam.cz (2a02:598:a::79:222): icmp_seq=4 ttl=57 time=4.77 ms
+64 bytes from www.seznam.cz (2a02:598:a::79:222): icmp_seq=5 ttl=57 time=4.73 ms
+
+google
+PING www.google.cz(prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003)) 56 data bytes
+64 bytes from prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003): icmp_seq=1 ttl=119 time=11.4 ms
+64 bytes from prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003): icmp_seq=2 ttl=119 time=11.6 ms
+64 bytes from prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003): icmp_seq=3 ttl=119 time=11.6 ms
+64 bytes from prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003): icmp_seq=4 ttl=119 time=11.6 ms
+64 bytes from prg02s12-in-x03.1e100.net (2a00:1450:4014:80b::2003): icmp_seq=5 ttl=119 time=11.5 ms
+
+facebook
+PING wwww.facebook.com(edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2)) 56 data bytes
+64 bytes from edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2): icmp_seq=1 ttl=57 time=4.32 ms
+64 bytes from edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2): icmp_seq=2 ttl=57 time=4.58 ms
+64 bytes from edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2): icmp_seq=3 ttl=57 time=4.56 ms
+64 bytes from edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2): icmp_seq=4 ttl=57 time=4.53 ms
+64 bytes from edge-star6-shv-01-prg1.facebook.com (2a03:2880:f03d:12:face:b00c:0:2): icmp_seq=5 ttl=57 time=4.53 ms
+
+traceroute
+traceroute to wwww.zoznam.sk. (213.81.185.100), 30 hops max, 60 byte packets
+ 1  a03r04.lan (192.168.1.1)  0.215 ms  0.263 ms  0.287 ms
+ 2  * * *
+ 3  router-h.tul.cz (147.230.250.18)  1.127 ms  1.058 ms  1.110 ms
+ 4  147.230.250.49 (147.230.250.49)  1.588 ms  1.779 ms  1.714 ms
+ 5  195.113.235.99 (195.113.235.99)  7.195 ms  7.148 ms  7.168 ms
+ 6  nix4.telekom.sk (91.210.16.23)  5.296 ms  5.030 ms  5.149 ms
+ 7  st-static-srk238.87-197-252.telecom.sk (87.197.252.238)  9.974 ms  9.991 ms  10.146 ms
+
