@@ -1,0 +1,90 @@
+Konfigurace, dělá se jednou
+git config --global user.name "Alice Mala"
+git config --global user.email "alice.mala@tul.cz"
+
+Autentizace
+přes ssh - ideální na vlastním počítači
+přes token - na školním počítači
+
+
+Vytvoříme Netbeans projekt a začneme ho lokálně verzovat
+V IDE vytvoříme projekt, který chceme verzovat např. MyProject
+cd MyProject
+Inicializujeme projekt jako lokální repozitář
+git init 
+Vytvoříme soubor .gitignore, kde zapíšeme, co verzovat nechceme 
+notepad .gitignore
+(open -e .gitignore on Mac)
+
+Např.
+### Java ###
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+
+### NetBeans ###
+**/nbproject/
+build/
+dist/
+build.xml
+manifest.mf
+
+### Intellij ###
+.idea/**/
+out/
+
+#OS
+.DS_Store
+
+Uděláme první lokální commit
+git status
+git add .
+git commit -m “Initial commit”
+
+Předpřipravení vzdáleného repozitáře na Githubu 
+(pro semestrální práci je tady: https://classroom.github.com/a/bAWBUFr6)
+
+Propojení lokálního se vzdáleným repozitářem
+cd MyProject
+git remote add origin <cesta ke vzdálenému repozitáři>
+git branch -M main
+Nahrání lokální verze do vzdáleného repozitáře
+git push -u origin main
+
+Práce s větvemi
+V main větvi si udržujeme jen spustitelný otestovaný kód, který můžeme kdykoliv předvíst
+Na GitHubu vytvoříme Issue - simulace zadání úkolu
+na lokálu vytvoříme a přepneme se do nové větve např. feature/basic-model
+	git branch feature/basic-model
+git checkout feature/basic-model 
+Provádíme commity
+Nahrání lokální verze nové větve do vzdáleného repozitáře
+git push -u origin feature/basic-model
+Na GitHubu vytvoříme Pull request s požadavkem udělat ve vzdáleném repozitáři zahrnutí (merge) nové větve do main
+Na GitHubu revize kódu a jeho zahrnutí - simulace code review
+Squash and merge - vznikne jen jeden výsledný commit v main větvi
+Stáhnutí výsledného commit v main větvi ve vzdáleném repozitáři do main větve na lokálu
+git pull origin main
+
+
+git remote set-url origin git@github.com:username/your-repository.git
+
+Terminal/Git bash commands
+ls
+ls -a
+cd Folder
+cd ..
+
+Open source
+
+
+Na GitHubu již existuje vzdálený repozitář, ke kterému mám přístup
+Vytvoření lokální verze repozitáře
+git clone <cesta k repozitáři>
+Otevření repozitáře v Netbeans 
+New Project -> Java with Ant -> From existing code 
